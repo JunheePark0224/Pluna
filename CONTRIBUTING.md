@@ -61,7 +61,7 @@ These issues are designed to help beginners get started.
 
 If you have questions or need help:
 - Open a discussion in the **Discussions** tab.
-- Reach out to the maintainers via email at **pluna-support@example.com**.
+- Reach out to the maintainers via email at **studywithpluna@gmail.com**.
 
 ---
 
@@ -131,7 +131,7 @@ By participating, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md
 1. Fork the repository.
 2. Clone your fork:
    ```bash
-   git clone https://github.com/<your-username>/Pluna.git
+   git clone https://github.com/JunheePark0224/Pluna.git
    ```
 3. Install dependencies:
    ```bash
