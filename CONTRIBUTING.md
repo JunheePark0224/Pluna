@@ -11,9 +11,9 @@ We welcome all types of contributions, including reporting issues, suggesting fe
 
 1. [Code of Conduct](#code-of-conduct)  
 2. [How to Contribute](#how-to-contribute)  
-   - [Reporting Issues](#1-reporting-issues)  
-   - [Suggesting Features](#2-suggesting-features)  
-   - [Submitting Changes](#3-submitting-changes)  
+   - [Reporting Issues](#reporting-issues)  
+   - [Suggesting Features](#suggesting-features)  
+   - [Submitting Changes](#submitting-changes)  
 3. [Getting Started](#getting-started)  
 4. [Pull Request Guidelines](#pull-request-guidelines)  
 5. [Beginner-Friendly Contributions](#beginner-friendly-contributions)  
@@ -30,7 +30,7 @@ Please be respectful and constructive in all interactions.
 
 ## 💡 How to Contribute
 
-### 1. Reporting Issues
+### Reporting Issues
 
 If you encounter bugs or have ideas for improvement:
 
@@ -47,7 +47,7 @@ If you encounter bugs or have ideas for improvement:
 
 ---
 
-### 2. Suggesting Features
+### Suggesting Features
 
 To propose a new feature:
 
@@ -57,7 +57,7 @@ To propose a new feature:
 
 ---
 
-### 3. Submitting Changes
+### Submitting Changes
 
 To contribute code or documentation updates:
 
