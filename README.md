@@ -77,7 +77,7 @@ Pluna is designed for **all students**, regardless of their exam preparation sta
 ---
 
 ## 🌌 Project Philosophy
-At **Pluna**, we believe in **empowering students** with tools to take control of their learning journey. By combining technology and personalization, Pluna aims to enhance productivity and make studying both efficient and enjoyable.
+Pluna offers a straightforward yet powerful platform designed to craft personalized and adaptable study routines. Tailored for students with varying schedules and objectives, our philosophy emphasizes flexibility and ease of use. Pluna steers clear of imposing rigid structures, instead empowering users to tailor their study plans and schedules according to their individual preferences and learning styles. Key features such as progress tracking and visual representations of plans ensure an engaging and productive learning journey.
 
 ---
 
