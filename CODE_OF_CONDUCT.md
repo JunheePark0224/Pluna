@@ -44,7 +44,9 @@ Behavior outside project spaces may also be addressed if it negatively impacts t
 
 ## Enforcement  
 
-Instances of abusive, harassing, or otherwise unacceptable behavior can be reported by contacting the project team at [conduct@yourproject.com]. All complaints will be reviewed and investigated promptly and fairly.
+Instances of abusive, harassing, or otherwise unacceptable behavior can be reported by contacting the project team at [studywithpluna@gmail.com]. All complaints will be reviewed and investigated promptly and fairly.
+
+
 
 The project team is committed to maintaining confidentiality regarding the reporter of an incident.
 
