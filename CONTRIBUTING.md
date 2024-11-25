@@ -66,8 +66,6 @@ If you have questions or need help:
 ---
 
 Thank you for helping make **Pluna** a better tool for students worldwide!
-
-
 Contributing to Pluna
 Thank you for considering contributing to Pluna! By contributing, you’re helping us create a better tool for students to manage their study schedules effectively. This guide provides all the information you need to contribute.
 
@@ -78,23 +76,21 @@ Clone your forked repository to your local machine:
 bash
 코드 복사
 git clone https://github.com/your-username/Pluna.git
-2. Set Up the Project
 Navigate to the project folder and install the dependencies:
-
 bash
 코드 복사
 cd Pluna
 npm install
-3. Create a Branch
+2. Create a Branch
 Always create a new branch for your work:
 
 bash
 코드 복사
 git checkout -b feature/your-feature-name
-4. Code and Test
+3. Code and Test
 Follow the project’s coding conventions.
 Run local tests to ensure your changes work as intended.
-5. Submit a Pull Request (PR)
+4. Submit a Pull Request (PR)
 Push your branch to your forked repository:
 bash
 코드 복사
@@ -106,34 +102,3 @@ Adhere to the project’s coding standards (e.g., use Prettier and ESLint if app
 Format and lint your code before submitting.
 Testing
 Add tests for any new features or bug fixes.
-Ensure all existing tests pass:
-bash
-코드 복사
-npm test
-Documentation
-Update documentation if your changes affect functionality or workflows.
-Reporting Issues
-If you encounter a bug or have a feature request:
-
-Check the Issues tab to see if it’s already reported.
-If not, create a new issue with the following details:
-Title: Brief summary of the issue.
-Description: Detailed explanation of the problem or feature.
-Steps to Reproduce (for bugs): Include steps to replicate the issue.
-Expected Behavior: What you expected to happen.
-Screenshots or Logs: Attach relevant visuals or logs, if possible.
-Pull Request Guidelines
-Use a new branch for each feature or bug fix.
-Write a clear and concise PR title and description.
-Link related issues in the PR description using keywords like Closes #123.
-Ensure all CI checks pass before submitting.
-Code of Conduct
-This project is committed to providing a welcoming and inclusive environment. Be respectful and professional in your interactions. Harassment, discrimination, or offensive behavior will not be tolerated.
-
-Need Help?
-If you have questions or need assistance:
-
-Open a discussion in the Issues tab.
-Contact us via email: jeonghyuk1@naver.com.
-License
-By contributing to this project, you agree that your contributions will be licensed under the same MIT License as the project.
