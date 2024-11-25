@@ -72,7 +72,6 @@ Thank you for helping make **Pluna** a better tool for students worldwide!
 
 
 
-
 # Contributing to Pluna
 
 🎉 **Thank you for taking the time to contribute to Pluna!** 🎉  
@@ -87,8 +86,8 @@ Your contributions help improve the platform and empower students.
   - [Reporting Bugs](#reporting-bugs)
   - [Suggesting Features](#suggesting-features)
   - [Submitting Changes](#submitting-changes)
-- [Getting Started](#getting-started)
-- [Pull Request Guidelines](#pull-request-guidelines)
+- [Getting Started](#-getting-started)
+- [Pull Request Guidelines](#-pull-request-guidelines)
 
 ---
 
@@ -154,6 +153,4 @@ By participating, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md
 ---
 
 Thank you for helping make Pluna better! 🚀
-
-
 
