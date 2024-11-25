@@ -91,7 +91,7 @@ At **Pluna**, we believe in **empowering students** with tools to take control o
    ```
    
 ## 🤝 Contributing
-If you are looking to contribute to Pluna, first of all, thank you! Please see our guidelines for contributing for more information on how to get started.
+If you are looking to contribute to Pluna, first of all, thank you! Please see our [Guidelines](./CONTRIBUTING.md) for contributing for more information on how to get started.
 
 ## 📄 License
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
