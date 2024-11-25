@@ -1,143 +1,97 @@
-# Contributions
-
-We welcome contributions to **Pluna**, whether it’s through reporting issues, suggesting features, or editing code directly on GitHub. We value all contributions and aim to maintain a collaborative and inclusive environment for everyone.
-
----
-
-## How to Contribute
-
-### 1. Editing Directly on GitHub
-You can edit files directly on GitHub using the following steps:
-1. Open the file you want to edit in the repository.
-2. Click the **Edit (pencil)** icon in the top-right corner.
-3. Make your changes in the GitHub editor.
-4. Write a clear commit message summarizing your change.
-5. Submit the change:
-   - For small edits, you can commit directly to the `main` branch (if permitted).
-   - For larger changes, create a new branch and submit a pull request.
-
----
-
-### 2. Reporting Issues
-If you encounter any bugs or have feature requests:
-- Go to the **Issues** tab in the repository.
-- Check if a similar issue already exists.
-- If not, click **New Issue** and provide:
-  - A clear and descriptive title.
-  - Details of the issue, including steps to reproduce (if applicable).
-  - Screenshots or examples, if helpful.
-
----
-
-### 3. Suggesting Features
-To propose new features:
-- Go to the **Issues** tab and create a new issue labeled `enhancement`.
-- Clearly describe the feature and its potential benefits for users.
-
----
-
-## Guidelines for Pull Requests (PRs)
-
-If you're submitting changes directly via GitHub:
-1. Click **Edit (pencil icon)** on the file you want to change.
-2. After making changes, create a **Pull Request** (PR) with:
-   - A clear title summarizing your changes.
-   - A detailed description of what you’ve done and why.
-3. Link related issues by referencing their number (e.g., `Fixes #123`).
-
----
-
-## Beginner-Friendly Contributions
-
-If you’re new to open source, start with issues labeled:
-- `good first issue`
-- `help wanted`
-
-These issues are designed to help beginners get started.
-
----
-
-## Community Support
-
-If you have questions or need help:
-- Open a discussion in the **Discussions** tab.
-- Reach out to the maintainers via email at **studywithpluna@gmail.com**.
-
----
-
-Thank you for helping make **Pluna** a better tool for students worldwide!
-
-
-
-
-
-
 # Contributing to Pluna
 
-🎉 **Thank you for taking the time to contribute to Pluna!** 🎉  
-Your contributions help improve the platform and empower students.
+🎉 Thank you for taking the time to contribute to **Pluna**! 🎉  
+Your contributions help improve the platform and empower students worldwide.
+
+We welcome all types of contributions, including reporting issues, suggesting features, and submitting code changes. This guide will help you get started with contributing to Pluna.
 
 ---
 
 ## 📜 Table of Contents
 
-- [Code of Conduct](#code-of-conduct)
-- [How to Contribute](#how-to-contribute)
-  - [Reporting Bugs](#reporting-bugs)
-  - [Suggesting Features](#suggesting-features)
-  - [Submitting Changes](#submitting-changes)
-- [Getting Started](#-getting-started)
-- [Pull Request Guidelines](#-pull-request-guidelines)
+1. [Code of Conduct](#code-of-conduct)  
+2. [How to Contribute](#how-to-contribute)  
+   - [Reporting Issues](#reporting-issues)  
+   - [Suggesting Features](#suggesting-features)  
+   - [Submitting Changes](#submitting-changes)  
+3. [Getting Started](#getting-started)  
+4. [Pull Request Guidelines](#pull-request-guidelines)  
+5. [Beginner-Friendly Contributions](#beginner-friendly-contributions)  
+6. [Community Support](#community-support)
 
 ---
 
 ## 📏 Code of Conduct
 
-By participating, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md). Please be respectful and constructive.
+By participating in Pluna, you agree to abide by our **Code of Conduct**.  
+Please be respectful and constructive in all interactions.
 
 ---
 
 ## 💡 How to Contribute
 
-### Reporting Bugs
-1. Go to the [Issues page](https://github.com/JunheePark0224/Pluna/issues).
-2. Click **New Issue** and select **Bug Report**.
-3. Describe the problem with steps to reproduce it.
+### 1. Reporting Issues
 
-### Suggesting Features
-1. Go to the [Issues page](https://github.com/JunheePark0224/Pluna/issues).
-2. Click **New Issue** and select **Feature Request**.
-3. Explain your suggestion and how it benefits users.
+If you encounter bugs or have ideas for improvement:
 
-### Submitting Changes
-1. Fork the repository and create a new branch:
+1. Go to the **Issues** tab in the repository.
+2. Check if a similar issue already exists.
+3. If not, click **New Issue** and choose the appropriate template:
+   - **Bug Report**:  
+     - Provide a clear and descriptive title.  
+     - Describe the problem with steps to reproduce it.  
+     - Attach screenshots or examples if possible.
+   - **Feature Request**:  
+     - Provide a clear and descriptive title.  
+     - Explain the feature and how it benefits users.
+
+---
+
+### 2. Suggesting Features
+
+To propose a new feature:
+
+1. Go to the **Issues** tab.
+2. Click **New Issue** and add the `enhancement` label.
+3. Clearly describe the proposed feature and its benefits for users.
+
+---
+
+### 3. Submitting Changes
+
+To contribute code or documentation updates:
+
+1. **Fork** the repository and create a new branch:
    ```bash
    git checkout -b feature/your-feature-name
    ```
-2. Make changes and commit them:
+2. Make your changes and commit them:
    ```bash
-   git commit -m "Add: Description of change"
+   git commit -m "Add: Description of your change"
    ```
-3. Push your changes:
+3. Push your changes to your fork:
    ```bash
    git push origin feature/your-feature-name
    ```
-4. Open a pull request and describe your changes.
+4. Open a **Pull Request (PR)**:
+   - Provide a clear title summarizing your changes.
+   - Include a detailed description explaining what you’ve done and why.
+   - Reference related issues by mentioning their numbers (e.g., `Fixes #123`).
 
 ---
 
 ## 🛠 Getting Started
 
-1. Fork the repository.
-2. Clone your fork:
+1. **Fork** the repository.
+2. Clone your fork to your local machine:
    ```bash
    git clone https://github.com/JunheePark0224/Pluna.git
    ```
-3. Install dependencies:
+3. Install the dependencies:
    ```bash
    npm install
    ```
-4. Run the application:
+4. Start the application:
    ```bash
    npm start
    ```
@@ -146,11 +100,28 @@ By participating, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md
 
 ## 🔄 Pull Request Guidelines
 
-- Reference related issues (e.g., `Fixes #123`).
-- Ensure all tests pass before submitting.
-- Provide clear descriptions of changes.
+- Ensure all tests pass before submitting your PR.
+- Reference related issues using keywords like `Fixes #123` or `Closes #456`.
+- Provide a clear and detailed description of your changes.
+- Keep your PR focused on a single topic or feature.
 
 ---
 
-Thank you for helping make Pluna better! 🚀
+## 👶 Beginner-Friendly Contributions
+
+If you’re new to open source, look for issues labeled **`good first issue`** or **`help wanted`**.  
+These issues are specifically designed to help beginners get started.
+
+---
+
+## 🤝 Community Support
+
+If you have questions or need assistance:
+
+- Start a discussion in the **Discussions** tab.
+- Contact the maintainers via email at **studywithpluna@gmail.com**.
+
+---
+
+Thank you for helping make Pluna a better tool for students! 🚀
 
