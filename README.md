@@ -1,6 +1,6 @@
 # Pluna 🌙
 
-![Pluna Logo](./assets/logo.png)
+![Pluna Logo](./client/src/assets/logo.png)
 
 **Personalized Learning Routine Generator**  
 A web application designed to create customized learning routines based on students' goals, schedules, and preferences. Pluna offers a dynamic calendar interface, learning progress visualization, and advanced features to optimize study plans for students of all levels.
