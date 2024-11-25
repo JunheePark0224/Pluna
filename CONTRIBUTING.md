@@ -9,15 +9,15 @@ We welcome all types of contributions, including reporting issues, suggesting fe
 
 ## 📜 Table of Contents
 
-1. [Code of Conduct](#code-of-conduct)  
-2. [How to Contribute](#how-to-contribute)  
+1. [Code of Conduct](#-code-of-conduct)  
+2. [How to Contribute](#-how-to-contribute)  
    - [Reporting Issues](#reporting-issues)  
    - [Suggesting Features](#suggesting-features)  
    - [Submitting Changes](#submitting-changes)  
-3. [Getting Started](#getting-started)  
-4. [Pull Request Guidelines](#pull-request-guidelines)  
-5. [Beginner-Friendly Contributions](#beginner-friendly-contributions)  
-6. [Community Support](#community-support)
+3. [Getting Started](#-getting-started)  
+4. [Pull Request Guidelines](#-pull-request-guidelines)  
+5. [Beginner-Friendly Contributions](#-beginner-friendly-contributions)  
+6. [Community Support](#-community-support)
 
 ---
 
