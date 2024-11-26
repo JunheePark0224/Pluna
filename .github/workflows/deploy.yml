@@ -1,0 +1,38 @@
+name: Pull Request Workflow
+
+on:
+  pull_request:
+    branches:
+      - main  
+
+jobs:
+  pr-check:
+    name: Test and Build on Pull Request
+    runs-on: ubuntu-latest  
+
+    steps:
+    
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20  
+          cache: 'npm'  
+
+     
+      - name: Install dependencies
+        working-directory: client
+        run: npm install
+
+     
+      - name: Run tests
+        working-directory: client
+        run: npm test
+
+      
+      - name: Build project
+        working-directory: client
+        run: npm run build
