@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      
+      # 1. GitHub 저장소에서 코드 가져오기
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -34,7 +34,7 @@ jobs:
         working-directory: client
         run: |
           if [ -f "src/App.test.js" ]; then
-            npm test -- --ci;
+            npm test -- --ci --detectOpenHandles;
           else
             echo "No test files found. Skipping tests.";
           fi
