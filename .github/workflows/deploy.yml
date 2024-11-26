@@ -24,12 +24,15 @@ jobs:
 
      
       - name: Install dependencies
+        working-directory: client
         run: npm install
 
      
       - name: Run tests
+        working-directory: client
         run: npm test
 
       
       - name: Build project
+        working-directory: client
         run: npm run build
