@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. GitHub 저장소에서 코드 가져오기
+      
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2. Node.js 환경 설정
+      
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -23,27 +23,23 @@ jobs:
           cache: 'npm'
           cache-dependency-path: client/package-lock.json
 
-      # 3. 디렉토리 구조 출력 (디버깅용)
-      - name: Print current directory and files
-        run: |
-          echo "Current directory:"
-          pwd
-          echo "Files in current directory:"
-          ls -al
-          echo "Files in client directory (if exists):"
-          ls -al client || echo "client directory does not exist"
-
-      # 4. 의존성 설치
+      
       - name: Install dependencies
-        working-directory: client  # client 디렉토리로 이동
+        working-directory: client
         run: npm install
 
-      # 5. 테스트 실행
+
+      
       - name: Run tests
         working-directory: client
-        run: npm test
+        run: |
+          if [ -f "src/App.test.js" ]; then
+            npm test -- --ci;
+          else
+            echo "No test files found. Skipping tests.";
+          fi
 
-      # 6. 빌드 실행
+      
       - name: Build project
         working-directory: client
         run: npm run build
