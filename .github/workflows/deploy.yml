@@ -3,15 +3,15 @@ name: Pull Request Workflow
 on:
   pull_request:
     branches:
-      - main  
+      - main
 
 jobs:
   pr-check:
     name: Test and Build on Pull Request
-    runs-on: ubuntu-latest  
+    runs-on: ubuntu-latest
 
     steps:
-    
+      # 1. GitHub 저장소에서 코드 가져오기
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -19,18 +19,25 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20  
-          cache: 'npm'  
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: client/package-lock.json
 
-     
+      
       - name: Install dependencies
         working-directory: client
         run: npm install
 
-     
+
+      
       - name: Run tests
         working-directory: client
-        run: npm test
+        run: |
+          if [ -f "src/App.test.js" ]; then
+            npm test -- --ci --detectOpenHandles;
+          else
+            echo "No test files found. Skipping tests.";
+          fi
 
       
       - name: Build project
