@@ -21,6 +21,14 @@ jobs:
           cache: 'npm'
           cache-dependency-path: client/package-lock.json
 
+      - name: Check for test changes or skip condition
+        run: |
+          if [[ "${{ github.event.pull_request.title }}" =~ \[Skip Test\] ]]; then
+            echo "Skipping tests and validation as per PR title '[Skip Test]'."; 
+            exit 0;
+          fi
+          git diff --name-only FETCH_HEAD | grep '\.test\.js' || (echo "Error: No test changes detected!" && exit 1)
+
       - name: Install dependencies
         working-directory: client
         run: npm install
@@ -30,7 +38,6 @@ jobs:
         run: |
           npm test -- --ci --detectOpenHandles --coverage --coverageReporters=text-summary --coverageReporters=json-summary
 
-          
       - name: Upload Test Coverage
         uses: actions/upload-artifact@v3
         with:
@@ -47,26 +54,44 @@ jobs:
           name: build-artifacts
           path: client/build
 
-        
       - name: Comment on PR
         uses: actions/github-script@v6
         with:
-            script: |
-              const fs = require('fs');
-              const summaryPath = 'client/coverage/coverage-summary.json';
-              let testSummary = 'Test coverage summary is unavailable.';
-              if (fs.existsSync(summaryPath)) {
-                const coverage = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
-                testSummary = `
-                  Statements: ${coverage.total.statements.pct}% (${coverage.total.statements.covered}/${coverage.total.statements.total})
-                  Branches: ${coverage.total.branches.pct}% (${coverage.total.branches.covered}/${coverage.total.branches.total})
-                  Functions: ${coverage.total.functions.pct}% (${coverage.total.functions.covered}/${coverage.total.functions.total})
-                  Lines: ${coverage.total.lines.pct}% (${coverage.total.lines.covered}/${coverage.total.lines.total})
-                `;
-              }
+          script: |
+            const fs = require('fs');
+            const summaryPath = 'client/coverage/coverage-summary.json';
+            const runId = process.env.GITHUB_RUN_ID;
+            const coverageUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${runId}`;
+            let testSummary = 'Test coverage summary is unavailable.';
+            const skipped = "${{ github.event.pull_request.title }}".includes('[Skip Test]');
+
+            if (!skipped && fs.existsSync(summaryPath)) {
+              const coverage = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
+              testSummary = `
+                Statements: ${coverage.total.statements.pct}% (${coverage.total.statements.covered}/${coverage.total.statements.total})
+                Branches: ${coverage.total.branches.pct}% (${coverage.total.branches.covered}/${coverage.total.branches.total})
+                Functions: ${coverage.total.functions.pct}% (${coverage.total.functions.covered}/${coverage.total.functions.total})
+                Lines: ${coverage.total.lines.pct}% (${coverage.total.lines.covered}/${coverage.total.lines.total})
+              `;
+            }
+
+            // If tests failed or coverage file is unavailable
+            if (!skipped && !fs.existsSync(summaryPath)) {
               github.rest.issues.createComment({
                 issue_number: context.payload.pull_request.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: `### Test Results\n\n**Coverage Summary:**\n${testSummary}\n\n**Status:** All tests passed successfully!`
+                body: `### Test Results\n\n**Status:** Tests failed or coverage summary is unavailable.`
               });
+              process.exit(1); // Ensure workflow fails if tests fail
+            }
+
+            // Post test results as PR comment
+            github.rest.issues.createComment({
+              issue_number: context.payload.pull_request.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: skipped
+                ? `### Test Results\n\n**Status:** Tests were skipped as requested in the PR title.`
+                : `### Test Results\n\n**Coverage Summary:**\n${testSummary}\n\n[Detailed Coverage Report](${coverageUrl})\n\n**Status:** All tests passed successfully!`
+            });
