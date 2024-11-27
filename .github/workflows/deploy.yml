@@ -28,8 +28,9 @@ jobs:
       - name: Run tests with coverage
         working-directory: client
         run: |
-          npm test -- --ci --detectOpenHandles --coverage || exit 1
+          npm test -- --ci --detectOpenHandles --coverage --coverageReporters=text-summary --coverageReporters=json-summary
 
+          
       - name: Upload Test Coverage
         uses: actions/upload-artifact@v3
         with:
@@ -46,19 +47,26 @@ jobs:
           name: build-artifacts
           path: client/build
 
+        
       - name: Comment on PR
         uses: actions/github-script@v6
         with:
-          script: |
-            const fs = require('fs');
-            const coveragePath = 'client/coverage/lcov-report/index.html';
-            let coverageReport = 'Test coverage report is unavailable.';
-            if (fs.existsSync(coveragePath)) {
-              coverageReport = fs.readFileSync(coveragePath, 'utf8');
-            }
-            github.rest.issues.createComment({
-              issue_number: context.payload.pull_request.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `### Test Results\n\n**Coverage Report:**\n\n${coverageReport}\n\n**Status:** All tests passed successfully!`
-            });
+            script: |
+              const fs = require('fs');
+              const summaryPath = 'client/coverage/coverage-summary.json';
+              let testSummary = 'Test coverage summary is unavailable.';
+              if (fs.existsSync(summaryPath)) {
+                const coverage = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
+                testSummary = `
+                  Statements: ${coverage.total.statements.pct}% (${coverage.total.statements.covered}/${coverage.total.statements.total})
+                  Branches: ${coverage.total.branches.pct}% (${coverage.total.branches.covered}/${coverage.total.branches.total})
+                  Functions: ${coverage.total.functions.pct}% (${coverage.total.functions.covered}/${coverage.total.functions.total})
+                  Lines: ${coverage.total.lines.pct}% (${coverage.total.lines.covered}/${coverage.total.lines.total})
+                `;
+              }
+              github.rest.issues.createComment({
+                issue_number: context.payload.pull_request.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `### Test Results\n\n**Coverage Summary:**\n${testSummary}\n\n**Status:** All tests passed successfully!`
+              });
