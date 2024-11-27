@@ -21,20 +21,14 @@ jobs:
           cache: 'npm'
           cache-dependency-path: client/package-lock.json
 
-      # Check if tests are skipped or test files are modified
       - name: Check for test changes or skip condition
+        shell: bash
         run: |
           if [[ "${{ github.event.pull_request.title }}" =~ \[Skip Test\] ]]; then
             echo "Skipping tests and validation as per PR title '[Skip Test]'.";
             exit 0;
           fi
-          # Check for changes
-          DIFF_RESULT=$(git diff --name-only FETCH_HEAD)
-          if [[ -z "$DIFF_RESULT" ]]; then
-            echo "Warning: Empty commit detected. Proceeding with default tests.";
-          else
-            echo "$DIFF_RESULT" | grep '\.test\.js' || (echo "Error: No test files detected in changes!" && exit 1)
-          fi
+          git diff --name-only FETCH_HEAD | grep '\.test\.js' || (echo "Error: No test files detected in changes!" && exit 1)
 
       - name: Install dependencies
         working-directory: client
