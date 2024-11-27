@@ -65,14 +65,13 @@ jobs:
                 Functions: ${coverage.total.functions.pct}% (${coverage.total.functions.covered}/${coverage.total.functions.total})
                 Lines: ${coverage.total.lines.pct}% (${coverage.total.lines.covered}/${coverage.total.lines.total})
               `;
-            }
-
-            if (!fs.existsSync(summaryPath)) {
+            } else {
+              console.log("Coverage summary file not found at", summaryPath);
               github.rest.issues.createComment({
                 issue_number: context.payload.pull_request.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: `### Test Results\n\n**Status:** Tests failed or coverage summary is unavailable.`
+                body: `### Test Results\n\n**Status:** Coverage summary file not found. Tests may have failed or coverage was not generated.`
               });
               process.exit(1); # Ensure workflow fails if tests fail
             }
