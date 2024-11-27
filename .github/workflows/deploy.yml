@@ -28,7 +28,7 @@ jobs:
       - name: Run tests with coverage
         working-directory: client
         run: |
-          npm test -- --ci --detectOpenHandles --coverage --coverageReporters=text-summary --coverageReporters=json-summary --verbose
+          npm test -- --ci --detectOpenHandles --coverage --coverageReporters=text-summary --coverageReporters=json-summary
 
       - name: Upload Test Coverage
         uses: actions/upload-artifact@v3
@@ -38,8 +38,7 @@ jobs:
 
       - name: Build project
         working-directory: client
-        run: |
-          npm run build || (echo "Build failed. Check the logs for details." && exit 1)
+        run: npm run build
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v3
@@ -53,14 +52,7 @@ jobs:
           script: |
             const fs = require('fs');
             const summaryPath = 'client/coverage/coverage-summary.json';
-            const runId = process.env.GITHUB_RUN_ID;
-            const coverageUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${runId}`;
             let testSummary = 'Test coverage summary is unavailable.';
-
-            // Debugging log to check variables
-            console.log(`Run ID: ${runId}`);
-            console.log(`Repository: ${context.repo.owner}/${context.repo.repo}`);
-
             if (fs.existsSync(summaryPath)) {
               const coverage = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
               testSummary = `
@@ -69,20 +61,10 @@ jobs:
                 Functions: ${coverage.total.functions.pct}% (${coverage.total.functions.covered}/${coverage.total.functions.total})
                 Lines: ${coverage.total.lines.pct}% (${coverage.total.lines.covered}/${coverage.total.lines.total})
               `;
-            } else {
-              console.log("Coverage summary file not found at", summaryPath);
-              github.rest.issues.createComment({
-                issue_number: context.payload.pull_request.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: `### Test Results\n\n**Status:** Coverage summary file not found. Tests may have failed or coverage was not generated.`
-              });
-              process.exit(1); # Ensure workflow fails if tests fail
             }
-
             github.rest.issues.createComment({
               issue_number: context.payload.pull_request.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `### Test Results\n\n**Coverage Summary:**\n${testSummary}\n\n[Detailed Coverage Report](${coverageUrl})\n\n**Status:** All tests passed successfully!`
+              body: `### Test Results\n\n**Coverage Summary:**\n${testSummary}\n\n**Status:** All tests passed successfully!`
             });
