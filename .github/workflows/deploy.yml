@@ -21,15 +21,16 @@ jobs:
           cache: 'npm'
           cache-dependency-path: client/package-lock.json
 
-      # Check if tests are skipped or test files are modified
       - name: Check for test changes or skip condition
         run: |
-          PR_TITLE="${{ github.event.pull_request.title }}"
-          if echo "$PR_TITLE" | grep -q "\[Skip Test\]"; then
-            echo "Skipping tests and validation as per PR title '[Skip Test]'."
-            exit 0
-          fi
-          git diff --name-only FETCH_HEAD | grep '\.test\.js' || (echo "Error: No test files detected in changes!" && exit 1)
+            PR_TITLE="${{ github.event.pull_request.title }}"
+            if echo "$PR_TITLE" | grep -q "\[Skip Test\]"; then
+              echo "Skipping tests and validation as per PR title '[Skip Test]'."
+              exit 0
+            fi
+            # HEAD를 기준으로 변경된 파일을 확인하도록 변경
+            git diff --name-only HEAD | grep '\.test\.js' || (echo "Error: No test files detected in changes!" && exit 1)
+        
 
       - name: Install dependencies
         working-directory: client
