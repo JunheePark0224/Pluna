@@ -21,12 +21,13 @@ jobs:
           cache: 'npm'
           cache-dependency-path: client/package-lock.json
 
+      # Check if tests are skipped or test files are modified
       - name: Check for test changes or skip condition
         shell: bash
         run: |
           if [[ "${{ github.event.pull_request.title }}" =~ \[Skip Test\] ]]; then
-            echo "Skipping tests and validation as per PR title '[Skip Test]'.";
-            exit 0;
+            echo "Skipping tests and validation as per PR title '[Skip Test]'."
+            exit 0
           fi
           git diff --name-only FETCH_HEAD | grep '\.test\.js' || (echo "Error: No test files detected in changes!" && exit 1)
 
