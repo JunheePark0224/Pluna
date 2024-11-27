@@ -21,15 +21,21 @@ jobs:
           cache: 'npm'
           cache-dependency-path: client/package-lock.json
 
-      # Check if tests are skipped or test files are modified
+      # Check for test changes, skip condition, or empty commit
       - name: Check for test changes or skip condition
-        shell: bash
         run: |
-          if [[ "${{ github.event.pull_request.title }}" =~ \[Skip Test\] ]]; then
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          if echo "$PR_TITLE" | grep -q "\[Skip Test\]"; then
             echo "Skipping tests and validation as per PR title '[Skip Test]'."
             exit 0
           fi
-          git diff --name-only FETCH_HEAD | grep '\.test\.js' || (echo "Error: No test files detected in changes!" && exit 1)
+
+          DIFF_RESULT=$(git diff --name-only FETCH_HEAD)
+          if [ -z "$DIFF_RESULT" ]; then
+            echo "Warning: Empty commit detected. Proceeding with default tests."
+          else
+            echo "$DIFF_RESULT" | grep '\.test\.js' || (echo "Error: No test files detected in changes!" && exit 1)
+          fi
 
       - name: Install dependencies
         working-directory: client
@@ -84,7 +90,7 @@ jobs:
                 repo: context.repo.repo,
                 body: `### Test Results\n\n**Status:** Tests failed or coverage summary is unavailable.`
               });
-              process.exit(1); # Ensure workflow fails if tests fail
+              process.exit(1);
             }
 
             github.rest.issues.createComment({
