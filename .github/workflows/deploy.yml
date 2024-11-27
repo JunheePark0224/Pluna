@@ -57,6 +57,10 @@ jobs:
             const coverageUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${runId}`;
             let testSummary = 'Test coverage summary is unavailable.';
 
+            // Debugging log to check variables
+            console.log(`Run ID: ${runId}`);
+            console.log(`Repository: ${context.repo.owner}/${context.repo.repo}`);
+
             if (fs.existsSync(summaryPath)) {
               const coverage = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
               testSummary = `
