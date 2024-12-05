@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import firstImage from "./assets/firstimage.png";
-import secondImage from "./assets/secondimage.png";
+
 
 function App() {
   const [showSecondPage, setShowSecondPage] = useState(false);
