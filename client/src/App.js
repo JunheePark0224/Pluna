@@ -1,33 +1,57 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import firstImage from "./assets/firstimage.png";
-
+import initialLogo from "./assets/initiallogo.png";
+import backgroundImage from "./assets/space.png";
 
 function App() {
-  const [showSecondPage, setShowSecondPage] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(true);
 
   useEffect(() => {
-    // Transition after 2 seconds
     const timer = setTimeout(() => {
-      setShowSecondPage(true);
-    }, 2000);
+      setIsAnimating(false);
+    }, 3000); // 애니메이션이 3초 후 종료
 
-    return () => clearTimeout(timer); // Cleanup timer
+    return () => clearTimeout(timer);
   }, []);
+
+  const handleSignUp = () => {
+    alert("Sign Up button clicked!"); // 회원가입 로직 추가
+  };
+
+  const handleLogIn = () => {
+    alert("Log In button clicked!"); // 로그인 로직 추가
+  };
 
   return (
     <div className="App">
-      {/* First Page */}
-      <div className={`page page1 ${showSecondPage ? "hidden" : ""}`}>
-        <img src={firstImage} alt="First Page" />
+      {/* 배경 */}
+      <div className="background">
+        <img
+          src={backgroundImage}
+          alt="Background"
+          className="background-image"
+        />
       </div>
 
-      {/* Second Page */}
-      <div className={`page page2 ${showSecondPage ? "fade-in" : ""}`}>
-        <div className="content">
-          <h1>Pluna</h1>
-          <p>If this is your first time, <strong>Sign Up</strong></p>
-          <p>If you already have an account, <strong>Log In</strong></p>
+      {/* 로고 */}
+      <div className={`logo ${isAnimating ? "large" : "small"}`}>
+        <img src={initialLogo} alt="Initial Logo" className="logo-image" />
+      </div>
+
+      {/* 콘텐츠 */}
+      <div className="content">
+        <h1 className="main-title">Pluna</h1>
+        <div className="button-row">
+          <p>If this is your first time,</p>
+          <button className="button" onClick={handleSignUp}>
+            Sign Up
+          </button>
+        </div>
+        <div className="button-row">
+          <p>If you already have an account,</p>
+          <button className="button" onClick={handleLogIn}>
+            Log In
+          </button>
         </div>
       </div>
     </div>
