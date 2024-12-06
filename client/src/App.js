@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsAnimating(false);
-    }, 3000); // 애니메이션이 3초 후 종료
+    }, 1000); // 애니메이션이 3초 후 종료
 
     return () => clearTimeout(timer);
   }, []);
