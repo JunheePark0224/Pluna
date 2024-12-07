@@ -144,5 +144,86 @@ body {
     margin: 10px 0;
   }  
 
+/* 공통 스타일: 배경 및 컨테이너 */
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.auth-box {
+  background: rgba(0, 0, 0, 0.8); /* 반투명 검은 배경 */
+  padding: 30px 40px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  width: 400px;
+}
+
+.auth-box h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.auth-box p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* 로고 스타일 */
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo-image {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* 입력 필드 스타일 */
+.auth-box label {
+  display: block;
+  text-align: left;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.auth-box input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+}
+
+.auth-box input:focus {
+  outline: none;
+  border: 2px solid #007bff;
+}
+
+/* 버튼 스타일 */
+.auth-box button {
+  margin-top: 20px;
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-box button:hover {
+  background-color: #0056b3;
+}
 
 
