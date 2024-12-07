@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom";
 import "./App.css";
 import initialLogo from "./assets/initiallogo.png";
 import backgroundImage from "./assets/space.png";
+import SignUp from "./SignUp";
+import LogIn from "./LogIn";
 
-function App() {
+function Home() {
   const [isAnimating, setIsAnimating] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -15,11 +19,11 @@ function App() {
   }, []);
 
   const handleSignUp = () => {
-    alert("Sign Up button clicked!"); // 회원가입 로직 추가
+    navigate("/signup");
   };
 
   const handleLogIn = () => {
-    alert("Log In button clicked!"); // 로그인 로직 추가
+    navigate("/login");
   };
 
   return (
@@ -55,6 +59,18 @@ function App() {
         </div>
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<LogIn />} />
+      </Routes>
+    </Router>
   );
 }
 
