@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Jua&family=Lalezar&display=swap');
+
 /* 전체 컨테이너 */
 .login-container {
     position: relative;
@@ -25,7 +27,7 @@
     z-index: 1;
     text-align: center;
     color: white;
-    font-family: "Roboto", sans-serif;
+    font-family: "Jua", sans-serif;
   }
   
   /* 로고 */
@@ -36,7 +38,7 @@
   
   /* 제목 */
   .login-content h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 0.5rem;
   }
   
@@ -84,15 +86,15 @@
   
   /* 하단 텍스트 */
   .login-footer {
-    margin-top: 1rem;
-    font-size: 1rem;
+    margin-top: 3rem;
+    font-size: 5rem;
   }
   
   .login-footer a {
     color: #007bff;
     text-decoration: none;
   }
-  
+  s
   .login-footer a:hover {
     text-decoration: underline;
   }
