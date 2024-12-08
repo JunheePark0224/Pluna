@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Jua&family=Lalezar&display=swap');
+/* About 페이지 배경 복구 */
+.about-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('./assets/space.png') no-repeat center center fixed;
+    background-size: cover; /* 배경 크기를 화면에 맞춤 */
+    color: white;
+    text-align: center;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    padding: 20px;
+  }
+  
+  /* 로고 스타일 */
+  .about-logo {
+    width: 200px; /* 로고 크기를 줄여 화면에 맞춤 */
+    margin-bottom: 20px;
+  }
+  
+  /* 뒤로가기 버튼 스타일 */
+  .back-button {
+    position: absolute;
+    top: 20px;
+    right: 20px; /* 오른쪽 상단 위치 */
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: 16px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+  }
+  
+  .back-button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* hover 시 반투명 */
+    color: #007bff; /* hover 시 파란색 */
+    border-color: #007bff;
+  }
+  
