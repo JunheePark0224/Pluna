@@ -1,22 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom";
 import "./App.css";
 import initialLogo from "./assets/initiallogo.png";
 import backgroundImage from "./assets/space.png";
 import SignUp from "./SignUp";
 import LogIn from "./LogIn";
+import About from "./About";
 
-function Home() {
-  const [isAnimating, setIsAnimating] = useState(true);
+function MainPage() {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsAnimating(false);
-    }, 1000); // 애니메이션이 3초 후 종료
-
-    return () => clearTimeout(timer);
-  }, []);
+  const handleAboutClick = () => {
+    navigate("/about");
+  };
 
   const handleSignUp = () => {
     navigate("/signup");
@@ -38,8 +34,13 @@ function Home() {
       </div>
 
       {/* 로고 */}
-      <div className={`logo ${isAnimating ? "large" : "small"}`}>
+      <div className="logo small">
         <img src={initialLogo} alt="Initial Logo" className="logo-image" />
+      </div>
+
+      {/* About Pluna (왼쪽 상단) */}
+      <div className="about-button" onClick={handleAboutClick}>
+        About Pluna
       </div>
 
       {/* 콘텐츠 */}
@@ -66,12 +67,14 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<MainPage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
