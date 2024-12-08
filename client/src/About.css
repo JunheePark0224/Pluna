@@ -24,7 +24,7 @@
   .back-button {
     position: absolute;
     top: 20px;
-    right: 20px; /* 오른쪽 상단 위치 */
+    left: 20px; /* 오른쪽 상단 위치 */
     font-family: 'IBM Plex Sans KR', sans-serif;
     font-size: 16px;
     color: white;

@@ -10,7 +10,7 @@ const SignUp = () => {
       <div className="signup-content">
         <img src={initialLogo} alt="Logo" className="signup-logo" />
         <h1>Create Your Account</h1>
-        <p>Sign up to get started!</p> {/* 텍스트 수정 */}
+        <p>Sign up to get started!</p>
         <form className="signup-form">
           <input
             type="text"

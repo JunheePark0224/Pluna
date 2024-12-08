@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom";
 import "./App.css";
 import initialLogo from "./assets/initiallogo.png";
@@ -8,7 +8,17 @@ import LogIn from "./LogIn";
 import About from "./About";
 
 function MainPage() {
+  const [isAnimating, setIsAnimating] = useState(true); // 애니메이션 상태 추가
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // 애니메이션이 1.5초 후 종료되도록 설정
+    const timer = setTimeout(() => {
+      setIsAnimating(false);
+    }, 1000); // 1.5초 후 애니메이션 종료
+
+    return () => clearTimeout(timer); // 타이머 정리
+  }, []);
 
   const handleAboutClick = () => {
     navigate("/about");
@@ -34,11 +44,11 @@ function MainPage() {
       </div>
 
       {/* 로고 */}
-      <div className="logo small">
+      <div className={`logo ${isAnimating ? "large" : "small"}`}>
         <img src={initialLogo} alt="Initial Logo" className="logo-image" />
       </div>
 
-      {/* About Pluna (왼쪽 상단) */}
+      {/* About Pluna 버튼 */}
       <div className="about-button" onClick={handleAboutClick}>
         About Pluna
       </div>
@@ -77,4 +87,3 @@ function App() {
 }
 
 export default App;
-
