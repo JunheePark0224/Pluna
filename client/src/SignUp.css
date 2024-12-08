@@ -25,7 +25,7 @@
     z-index: 1;
     text-align: center;
     color: white;
-    font-family: "Roboto", sans-serif;
+    font-family: "Jua", sans-serif;
   }
   
   /* 로고 */
@@ -74,6 +74,7 @@
     border: none;
     border-radius: 5px;
     font-size: 1.2rem;
+    font-family: "Jua", sans-serif;
     cursor: pointer;
     transition: background-color 0.3s;
   }
