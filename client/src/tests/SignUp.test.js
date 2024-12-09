@@ -1,12 +1,11 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import SignUp from "../SignUp";;
+import SignUp from "../SignUp";
 const axios = require("axios");
-
 
 jest.mock("axios");
 
-test("회원가입 성공 시 메시지 출력", async () => {
+test("Displays success message on successful signup", async () => {
   axios.post.mockResolvedValueOnce({ data: { message: "Sign up successful!" } });
 
   render(<SignUp />);
@@ -17,16 +16,16 @@ test("회원가입 성공 시 메시지 출력", async () => {
   userEvent.type(screen.getByPlaceholderText("Password"), "password123");
   userEvent.type(screen.getByPlaceholderText("Phone Number"), "01012345678");
 
-  fireEvent.click(screen.getByText("Sign Up"));
+  fireEvent.click(screen.getByRole("button", { name: "Sign Up" }));
 
   const message = await screen.findByText("Sign up successful!");
   expect(message).toBeInTheDocument();
 });
 
-test("필수 입력값 누락 시 에러 메시지 출력", async () => {
+test("Displays error message when required fields are missing", async () => {
   render(<SignUp />);
 
-  fireEvent.click(screen.getByText("Sign Up"));
+  fireEvent.click(screen.getByRole("button", { name: "Sign Up" }));
 
   const message = await screen.findByText("All fields are required");
   expect(message).toBeInTheDocument();
