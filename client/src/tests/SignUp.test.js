@@ -1,7 +1,8 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import SignUp from "../SignUp";;
-import axios from "axios";
+const axios = require("axios");
+
 
 jest.mock("axios");
 
