@@ -8,39 +8,19 @@ import LogIn from "./LogIn";
 import About from "./About";
 
 function MainPage() {
-  const [isAnimating, setIsAnimating] = useState(true); // 애니메이션 상태 추가
+  const [isAnimating, setIsAnimating] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // 애니메이션이 1.5초 후 종료되도록 설정
-    const timer = setTimeout(() => {
-      setIsAnimating(false);
-    }, 1000); // 1.5초 후 애니메이션 종료
-
-    return () => clearTimeout(timer); // 타이머 정리
+    const timer = setTimeout(() => setIsAnimating(false), 1000);
+    return () => clearTimeout(timer);
   }, []);
-
-  const handleAboutClick = () => {
-    navigate("/about");
-  };
-
-  const handleSignUp = () => {
-    navigate("/signup");
-  };
-
-  const handleLogIn = () => {
-    navigate("/login");
-  };
 
   return (
     <div className="App">
       {/* 배경 */}
       <div className="background">
-        <img
-          src={backgroundImage}
-          alt="Background"
-          className="background-image"
-        />
+        <img src={backgroundImage} alt="Background" className="background-image" />
       </div>
 
       {/* 로고 */}
@@ -48,8 +28,8 @@ function MainPage() {
         <img src={initialLogo} alt="Initial Logo" className="logo-image" />
       </div>
 
-      {/* About Pluna 버튼 */}
-      <div className="about-button" onClick={handleAboutClick}>
+      {/* About 버튼 */}
+      <div className="about-button" onClick={() => navigate("/about")}>
         About Pluna
       </div>
 
@@ -58,13 +38,13 @@ function MainPage() {
         <h1 className="main-title">Pluna</h1>
         <div className="button-row">
           <p>If this is your first time,</p>
-          <button className="button" onClick={handleSignUp}>
+          <button className="button" onClick={() => navigate("/signup")}>
             Sign Up
           </button>
         </div>
         <div className="button-row">
           <p>If you already have an account,</p>
-          <button className="button" onClick={handleLogIn}>
+          <button className="button" onClick={() => navigate("/login")}>
             Log In
           </button>
         </div>
