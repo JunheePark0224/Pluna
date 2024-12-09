@@ -6,6 +6,7 @@ import backgroundImage from "./assets/space.png";
 import SignUp from "./SignUp";
 import LogIn from "./LogIn";
 import About from "./About";
+import InputData from "./InputData"; // InputData 컴포넌트 불러오기
 
 function MainPage() {
   const [isAnimating, setIsAnimating] = useState(true);
@@ -48,6 +49,13 @@ function MainPage() {
             Log In
           </button>
         </div>
+        {/* Pass 버튼 추가 */}
+        <div className="button-row">
+          <p>If you want to skip login,</p>
+          <button className="button" onClick={() => navigate("/inputdata")}>
+            Pass
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -61,6 +69,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/about" element={<About />} />
+        <Route path="/inputdata" element={<InputData />} /> {/* /inputdata 라우팅 추가 */}
       </Routes>
     </Router>
   );
