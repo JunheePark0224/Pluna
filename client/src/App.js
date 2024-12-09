@@ -6,6 +6,7 @@ import backgroundImage from "./assets/space.png";
 import SignUp from "./SignUp";
 import LogIn from "./LogIn";
 
+
 function Home() {
   const [isAnimating, setIsAnimating] = useState(true);
   const navigate = useNavigate();
