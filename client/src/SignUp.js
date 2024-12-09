@@ -23,6 +23,13 @@ const SignUp = () => {
   // 폼 제출 핸들러
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // 모든 필수 필드가 채워졌는지 확인
+    if (!formData.username || !formData.id || !formData.email || !formData.password) {
+      setMessage("All fields are required");
+      return;
+    }
+
     console.log("Sending signup request with:", formData); // 요청 데이터 확인
     try {
       const response = await axios.post("http://localhost:3001/api/signup", {

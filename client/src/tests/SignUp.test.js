@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import SignUp from "../SignUp";
-const axios = require("axios");
+import axios from "axios";
 
 jest.mock("axios");
 
@@ -25,8 +25,12 @@ test("Displays success message on successful signup", async () => {
 test("Displays error message when required fields are missing", async () => {
   render(<SignUp />);
 
+  // 버튼 클릭 (폼 제출)
   fireEvent.click(screen.getByRole("button", { name: "Sign Up" }));
 
-  const message = await screen.findByText("All fields are required");
+  // 메시지를 텍스트 매처를 사용하여 찾기
+  const message = await screen.findByText((content) =>
+    content.includes("All fields are required")
+  );
   expect(message).toBeInTheDocument();
 });
