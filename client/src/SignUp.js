@@ -39,8 +39,7 @@ const SignUp = () => {
       setMessage(error.response?.data?.message || "Signup failed");
     }
   };
-  
-  
+
   return (
     <div className="signup-container">
       <img src={spaceBackground} alt="Background" className="signup-background" />
@@ -65,6 +64,7 @@ const SignUp = () => {
             className="signup-input"
             value={formData.id}
             onChange={handleChange}
+            required
           />
           <input
             type="email"
