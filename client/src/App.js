@@ -6,7 +6,8 @@ import backgroundImage from "./assets/space.png";
 import SignUp from "./SignUp";
 import LogIn from "./LogIn";
 import About from "./About";
-import InputData from "./InputData"; // InputData 컴포넌트 불러오기
+import InputData from "./InputData"; // InputData컴포넌트 추가
+
 
 function MainPage() {
   const [isAnimating, setIsAnimating] = useState(true);
@@ -69,7 +70,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/about" element={<About />} />
-        <Route path="/inputdata" element={<InputData />} /> {/* /inputdata 라우팅 추가 */}
+        <Route path="/inputdata" element={<InputData />} /> {/* InputData 라우팅 추가 */}
       </Routes>
     </Router>
   );
