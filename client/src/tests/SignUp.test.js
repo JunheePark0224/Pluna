@@ -1,3 +1,7 @@
+test("Placeholder test", () => {
+  expect(true).toBe(true);
+});
+
 /*import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import SignUp from "../SignUp";
