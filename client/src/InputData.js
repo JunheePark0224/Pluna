@@ -6,7 +6,7 @@ import spaceBackground from "./assets/space.png";
 const InputData = () => {
   const [step, setStep] = useState(1);
   const [subjects, setSubjects] = useState([
-    { enabled: true, subject: "Korean", range: "Math I", difficulty: "Easy", studyHour: "2 hours" },
+    { enabled: true, subject: "", range: "", difficulty: "", studyHour: "" },
     { enabled: false, subject: "", range: "", difficulty: "", studyHour: "" },
     { enabled: false, subject: "", range: "", difficulty: "", studyHour: "" },
   ]);
