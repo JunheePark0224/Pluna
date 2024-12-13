@@ -14,17 +14,17 @@ const SignUp = () => {
   });
   const [message, setMessage] = useState("");
 
-  // 입력 핸들러
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // 폼 제출 핸들러
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // 모든 필수 필드가 채워졌는지 확인
+    
     if (!formData.username || !formData.id || !formData.email || !formData.password) {
       setMessage("All fields are required");
       return;
@@ -41,6 +41,8 @@ const SignUp = () => {
       });
       console.log("Server response:", response.data); // 서버 응답 확인
       setMessage(response.data.message);
+
+      localStorage.setItem("username", formData.username);
     } catch (error) {
       console.error("Error during signup:", error.response?.data || error.message); // 에러 확인
       setMessage(error.response?.data?.message || "Signup failed");
