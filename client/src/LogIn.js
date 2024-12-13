@@ -76,6 +76,9 @@ const LogIn = () => {
         <p className="login-footer">
           Don't have an account? <a href="/signup">Sign Up</a>
         </p>
+        <p className="login-footer">
+          <a href="/forgot-password">Forgot Password?</a>
+        </p>
       </div>
     </div>
   );
