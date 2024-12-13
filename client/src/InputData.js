@@ -1,61 +1,34 @@
 import React, { useState } from "react";
 import "./InputData.css";
-import initialLogo from "./assets/initiallogo.png"; // 로고
-import spaceBackground from "./assets/space.png"; // 배경 이미지
+import initialLogo from "./assets/initiallogo.png";
+import spaceBackground from "./assets/space.png";
 
 const InputData = () => {
-  const [step, setStep] = useState(1); // 현재 단계
-  const [subject, setSubject] = useState(""); // 과목 입력
-  const [studyStyle1, setStudyStyle1] = useState({
-    examDate: "",
-    examRange: "",
-    difficulty: "",
-  }); // 학습 스타일 1 입력
-  const [studyStyle2, setStudyStyle2] = useState({
-    studyPreference: "",
-    breakPreference: "",
-    dailyGoal: "",
-    schedule: "",
-  }); // 학습 스타일 2 입력
-  const [message, setMessage] = useState("");
+  const [step, setStep] = useState(1);
+  const [subjects, setSubjects] = useState([
+    { enabled: true, subject: "Korean", range: "Math I", difficulty: "Easy", studyHour: "2 hours" },
+    { enabled: false, subject: "", range: "", difficulty: "", studyHour: "" },
+    { enabled: false, subject: "", range: "", difficulty: "", studyHour: "" },
+  ]);
+
+  const handleInputChange = (index, field, value) => {
+    const updatedSubjects = [...subjects];
+    updatedSubjects[index][field] = value;
+    setSubjects(updatedSubjects);
+  };
+
+  const handleCheckboxChange = (index) => {
+    const updatedSubjects = [...subjects];
+    updatedSubjects[index].enabled = !updatedSubjects[index].enabled;
+    setSubjects(updatedSubjects);
+  };
 
   const handleNextStep = () => {
-    if (step === 1 && !subject) {
-      setMessage("Please select a subject.");
-      return;
-    }
-    if (
-      step === 2 &&
-      (!studyStyle1.examDate || !studyStyle1.examRange || !studyStyle1.difficulty)
-    ) {
-      setMessage("Please fill out all fields in Study Style 1.");
-      return;
-    }
-    setMessage(""); // 오류 메시지 초기화
     setStep(step + 1);
   };
 
-  const handleInputChange = (e, setter) => {
-    const { name, value } = e.target;
-    setter((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = () => {
-    if (
-      !studyStyle2.studyPreference ||
-      !studyStyle2.breakPreference ||
-      !studyStyle2.dailyGoal ||
-      !studyStyle2.schedule
-    ) {
-      setMessage("Please complete all fields in Study Style 2.");
-      return;
-    }
-    setMessage("Study Plan submitted successfully!");
-    console.log({
-      subject,
-      studyStyle1,
-      studyStyle2,
-    });
+  const handlePreviousStep = () => {
+    setStep(step - 1);
   };
 
   return (
@@ -64,97 +37,148 @@ const InputData = () => {
       <div className="inputdata-box">
         <img src={initialLogo} alt="Logo" className="inputdata-logo" />
         <h1>Pluna Study Plan</h1>
-        {message && <p className="inputdata-message">{message}</p>}
         <div className="steps">
           <span className={step === 1 ? "active-step" : ""}>Step 1</span>
           <span className={step === 2 ? "active-step" : ""}>Step 2</span>
           <span className={step === 3 ? "active-step" : ""}>Step 3</span>
         </div>
+
         {step === 1 && (
           <div>
-            <h2>Choose Your Subject</h2>
-            <input
-              type="text"
-              placeholder="Enter your subject"
-              value={subject}
-              onChange={(e) => setSubject(e.target.value)}
-              className="inputdata-input"
-            />
-            <button className="inputdata-button" onClick={handleNextStep}>
+            <h2>Select and Fill Fields</h2>
+            <div className="subjects-grid">
+              {subjects.map((subject, index) => (
+                <div key={index} className="subject-column">
+                  <label>
+                    <input
+                      type="checkbox"
+                      checked={subject.enabled}
+                      onChange={() => handleCheckboxChange(index)}
+                    />
+                    Subject {index + 1}
+                  </label>
+                  {subject.enabled && (
+                    <>
+                      <input
+                        type="text"
+                        placeholder="Subject (e.g., Korean, Math)"
+                        value={subject.subject}
+                        onChange={(e) => handleInputChange(index, "subject", e.target.value)}
+                        className="inputdata-input"
+                      />
+                      <input
+                        type="text"
+                        placeholder="Range (e.g., Math I, II)"
+                        value={subject.range}
+                        onChange={(e) => handleInputChange(index, "range", e.target.value)}
+                        className="inputdata-input"
+                      />
+                      <input
+                        type="text"
+                        placeholder="Difficulty (e.g., Easy, Hard)"
+                        value={subject.difficulty}
+                        onChange={(e) => handleInputChange(index, "difficulty", e.target.value)}
+                        className="inputdata-input"
+                      />
+                      <input
+                        type="text"
+                        placeholder="StudyHour (e.g., 2 hours)"
+                        value={subject.studyHour}
+                        onChange={(e) => handleInputChange(index, "studyHour", e.target.value)}
+                        className="inputdata-input"
+                      />
+                    </>
+                  )}
+                </div>
+              ))}
+            </div>
+            <button className="inputdata-button next" onClick={handleNextStep}>
               Next
             </button>
           </div>
         )}
+
         {step === 2 && (
           <div>
-            <h2>Study Style 1</h2>
-            <input
-              type="text"
-              name="examDate"
-              placeholder="Exam Date (e.g., 2024-12-10)"
-              value={studyStyle1.examDate}
-              onChange={(e) => handleInputChange(e, setStudyStyle1)}
-              className="inputdata-input"
-            />
-            <input
-              type="text"
-              name="examRange"
-              placeholder="Exam Range"
-              value={studyStyle1.examRange}
-              onChange={(e) => handleInputChange(e, setStudyStyle1)}
-              className="inputdata-input"
-            />
-            <input
-              type="text"
-              name="difficulty"
-              placeholder="Difficulty (e.g., Easy, Medium, Hard)"
-              value={studyStyle1.difficulty}
-              onChange={(e) => handleInputChange(e, setStudyStyle1)}
-              className="inputdata-input"
-            />
-            <button className="inputdata-button" onClick={handleNextStep}>
-              Next
-            </button>
+            <h2>Information</h2>
+            <div className="subjects-grid">
+              {subjects.map((subject, index) =>
+                subject.enabled ? (
+                  <div key={index} className="subject-column">
+                    <h3>{subject.subject || `Subject ${index + 1}`}</h3>
+                    <input
+                      type="text"
+                      placeholder="Exam Date (e.g., 2024-12-10)"
+                      className="inputdata-input"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Study Style (e.g., Concentration type)"
+                      className="inputdata-input"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Break Preference (e.g., Long break)"
+                      className="inputdata-input"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Daily Goal"
+                      className="inputdata-input"
+                    />
+                  </div>
+                ) : null
+              )}
+            </div>
+            <div className="navigation-buttons">
+              <button className="inputdata-button previous" onClick={handlePreviousStep}>
+                Previous
+              </button>
+              <button className="inputdata-button next" onClick={handleNextStep}>
+                Next
+              </button>
+            </div>
           </div>
         )}
+
         {step === 3 && (
           <div>
-            <h2>Study Style 2</h2>
-            <input
-              type="text"
-              name="studyPreference"
-              placeholder="Study Preference"
-              value={studyStyle2.studyPreference}
-              onChange={(e) => handleInputChange(e, setStudyStyle2)}
-              className="inputdata-input"
-            />
-            <input
-              type="text"
-              name="breakPreference"
-              placeholder="Break Preference"
-              value={studyStyle2.breakPreference}
-              onChange={(e) => handleInputChange(e, setStudyStyle2)}
-              className="inputdata-input"
-            />
-            <input
-              type="text"
-              name="dailyGoal"
-              placeholder="Daily Study Goal"
-              value={studyStyle2.dailyGoal}
-              onChange={(e) => handleInputChange(e, setStudyStyle2)}
-              className="inputdata-input"
-            />
-            <input
-              type="text"
-              name="schedule"
-              placeholder="Schedule"
-              value={studyStyle2.schedule}
-              onChange={(e) => handleInputChange(e, setStudyStyle2)}
-              className="inputdata-input"
-            />
-            <button className="inputdata-button" onClick={handleSubmit}>
-              Submit
-            </button>
+            <h2>Daily Schedule</h2>
+            <div className="subjects-grid">
+              {subjects.map((subject, index) =>
+                subject.enabled ? (
+                  <div key={index} className="subject-column">
+                    <h3>{subject.subject || `Subject ${index + 1}`}</h3>
+                    <input
+                      type="text"
+                      placeholder="Academy Schedule"
+                      className="inputdata-input"
+                    />
+                    <input
+                      type="text"
+                      placeholder="School Schedule"
+                      className="inputdata-input"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Weekend Preference"
+                      className="inputdata-input"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Sleep Hours"
+                      className="inputdata-input"
+                    />
+                  </div>
+                ) : null
+              )}
+            </div>
+            <div className="navigation-buttons">
+              <button className="inputdata-button previous" onClick={handlePreviousStep}>
+                Previous
+              </button>
+              <button className="inputdata-button submit">Submit</button>
+            </div>
           </div>
         )}
       </div>
