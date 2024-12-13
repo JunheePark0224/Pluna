@@ -69,6 +69,14 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 살짝 입체감 추가 */
   transition: all 0.3s ease-in-out; /* 호버 애니메이션 */
 }
+
+/* placeholder 스타일 */
+.login-input::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* 밝은 흰색 톤 */
+  font-style: italic; /* 살짝 기울임 */
+  font-family: "Jua", sans-serif; /* placeholder에도 동일 글씨체 적용 */
+}
+
 .login-input:focus {
   outline: none;
   border: 2px solid #00c6ff; /* 포커스 시 색상 강조 */
