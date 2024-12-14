@@ -21,7 +21,7 @@
 
 .inputdata-box {
   width: 90%;
-  max-width: 1000px;
+  max-width: 1200px;
   padding: 2rem;
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 15px;
@@ -61,9 +61,9 @@
 
 .subjects-grid {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
 }
 
 .subject-column {
@@ -75,8 +75,9 @@
 
 .inputdata-column {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
   width: 100%;
 }
 
@@ -90,7 +91,7 @@
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
-  display: block; /* 중앙 정렬 */
+  display: block;
   font-family: 'IBM Plex Sans KR', sans-serif; /* 글꼴 통일 */
 }
 
@@ -99,18 +100,91 @@
   resize: none; /* 크기 조정 방지 */
 }
 
-
 .inputdata-button {
   padding: 0.8rem 1.5rem;
   background-color: #007bff;
   color: white;
-    border: none;
-    border-radius: 5px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+}
+
+.inputdata-button:hover {
+  background-color: #0056b3;
 }
 
 .navigation-buttons {
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
+}
+
+.select-box {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.radio-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.radio-item {
+  padding: 0.5rem 1rem;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.radio-item.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.question-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 800px; /* 최대 너비 설정 */
+}
+
+.radio-group-horizontal {
+  display: flex;
+  gap: 1rem;
+}
+
+.radio-item {
+  padding: 0.5rem 1rem;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.radio-item.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+label {
+  color: white;
+  font-weight: bold;
+  margin-right: 1rem;
 }
