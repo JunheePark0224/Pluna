@@ -53,6 +53,12 @@
   background-color: #007bff;
 }
 
+.inputdata-error {
+  color: red;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
 .subjects-grid {
   display: flex;
   justify-content: space-around;
@@ -67,21 +73,39 @@
   width: 30%;
 }
 
-.inputdata-input {
+.inputdata-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
+}
+
+.inputdata-input,
+.inputdata-textarea {
+  width: 90%; /* 박스 크기를 늘림 */
+  max-width: 800px; /* 최대 너비 */
   padding: 0.8rem;
+  margin: 1rem auto; /* 중앙 정렬 및 여백 추가 */
   border: 2px solid white;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
+  display: block; /* 중앙 정렬 */
+  font-family: 'IBM Plex Sans KR', sans-serif; /* 글꼴 통일 */
 }
+
+.inputdata-textarea {
+  height: 150px; /* 텍스트 박스의 고정 높이 */
+  resize: none; /* 크기 조정 방지 */
+}
+
 
 .inputdata-button {
   padding: 0.8rem 1.5rem;
   background-color: #007bff;
   color: white;
-  border: none;
-  border-radius: 5px;
+    border: none;
+    border-radius: 5px;
   cursor: pointer;
 }
 
