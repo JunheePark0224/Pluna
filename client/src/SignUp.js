@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import "./SignUp.css"; // SignUp.css import
-import initialLogo from "./assets/initiallogo.png"; // 로고
-import spaceBackground from "./assets/space.png"; // 배경 이미지
+import { useNavigate } from "react-router-dom"; // 페이지 이동을 위한 useNavigate 추가
+import "./SignUp.css";
+import initialLogo from "./assets/initiallogo.png";
+import spaceBackground from "./assets/space.png";
 import axios from "axios";
 
 const SignUp = () => {
@@ -13,24 +14,19 @@ const SignUp = () => {
     phoneNumber: "",
   });
   const [message, setMessage] = useState("");
+  const navigate = useNavigate(); // 시작 페이지로 이동하기 위한 훅
 
-  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    
     if (!formData.username || !formData.id || !formData.email || !formData.password) {
       setMessage("All fields are required");
       return;
     }
-
-    console.log("Sending signup request with:", formData); // 요청 데이터 확인
     try {
       const response = await axios.post("http://localhost:3001/api/signup", {
         username: formData.username,
@@ -39,21 +35,28 @@ const SignUp = () => {
         password: formData.password,
         phone_number: formData.phoneNumber,
       });
-      console.log("Server response:", response.data); // 서버 응답 확인
       setMessage(response.data.message);
-
       localStorage.setItem("username", formData.username);
     } catch (error) {
-      console.error("Error during signup:", error.response?.data || error.message); // 에러 확인
       setMessage(error.response?.data?.message || "Signup failed");
     }
+  };
+
+  // 로고 클릭 시 시작 페이지로 이동
+  const handleLogoClick = () => {
+    navigate("/"); // "/" 경로로 이동
   };
 
   return (
     <div className="signup-container">
       <img src={spaceBackground} alt="Background" className="signup-background" />
       <div className="signup-content">
-        <img src={initialLogo} alt="Logo" className="signup-logo" />
+        <img
+          src={initialLogo}
+          alt="Logo"
+          className="signup-logo"
+          onClick={handleLogoClick} // 클릭 이벤트 추가
+        />
         <h1>Create Your Account</h1>
         <p>Sign up to get started!</p>
         <form className="signup-form" onSubmit={handleSubmit}>
