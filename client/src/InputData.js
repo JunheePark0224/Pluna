@@ -127,11 +127,11 @@ const InputData = () => {
               <input
                 type="text"
                 placeholder="Exam Date (e.g., 2024-12-10)"
-                className="inputdata-input"
+                className="inputdata-input" 
               />
               <textarea
                 placeholder="Subject-Specific Notes (e.g., I don't want to study this subject on Saturdays.)"
-                className="inputdata-textarea"
+                className="inputdata-textarea" 
               />
             </div>
           )

@@ -82,19 +82,21 @@
 
 .inputdata-input,
 .inputdata-textarea {
-  width: 80%; /* 가로 크기 Step 3와 일치 */
+  width: 90%; /* 박스 크기를 늘림 */
+  max-width: 800px; /* 최대 너비 */
   padding: 0.8rem;
-  margin: 0.5rem auto; /* 중앙 정렬 */
+  margin: 1rem auto; /* 중앙 정렬 및 여백 추가 */
   border: 2px solid white;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
-  display: block; /* 중앙 정렬을 위해 block 속성 */
+  display: block; /* 중앙 정렬 */
+  font-family: 'IBM Plex Sans KR', sans-serif; /* 글꼴 통일 */
 }
 
 .inputdata-textarea {
-  height: 120px; /* 텍스트 박스 높이 */
-  resize: none; /* 사용자가 크기 조정하지 못하게 설정 */
+  height: 150px; /* 텍스트 박스의 고정 높이 */
+  resize: none; /* 크기 조정 방지 */
 }
 
 
@@ -102,8 +104,8 @@
   padding: 0.8rem 1.5rem;
   background-color: #007bff;
   color: white;
-  border: none;
-  border-radius: 5px;
+    border: none;
+    border-radius: 5px;
   cursor: pointer;
 }
 
