@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Jua&family=Lalezar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Jua&display=swap');
 
 /* 전체 컨테이너 */
 .signup-container {
@@ -19,29 +19,34 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1; /* 배경은 항상 뒤에 고정 */
+  z-index: -1;
 }
 
 /* 컨텐츠 박스 */
 .signup-content {
-  z-index: 1; /* 컨텐츠는 배경 위 */
+  z-index: 1;
   text-align: center;
   color: white;
   font-family: "Jua", sans-serif;
-  animation: fadeInContent 1s ease-in-out; /* 콘텐츠와 로고 애니메이션 */
 }
 
 /* 로고 */
 .signup-logo {
   width: 150px;
   margin-bottom: 1rem;
+  transition: transform 0.3s ease, filter 0.3s ease; /* 애니메이션 효과 */
+  cursor: pointer; /* 클릭 가능 커서 */
+}
+
+.signup-logo:hover {
+  transform: scale(1.2) rotate(5deg); /* 확대 및 살짝 회전 */
+  filter: brightness(1.5); /* 밝기 증가 */
 }
 
 /* 제목 */
 .signup-content h1 {
   font-size: 4rem;
   margin-bottom: 0.5rem;
-  font-family: "Jua", cursive;
 }
 
 /* 설명 */
@@ -63,38 +68,27 @@
   max-width: 400px;
   padding: 1rem;
   margin-bottom: 1rem;
-  border: 2px solid rgba(255, 255, 255, 0.5); /* 부드러운 흰색 테두리 */
-  border-radius: 20px; /* 둥근 모서리 */
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
   font-size: 1rem;
-  font-family: "Jua", sans-serif; /* 글씨체 통일 */
-  background-color: rgba(255, 255, 255, 0.1); /* 반투명 배경 */
+  font-family: "Jua", sans-serif;
+  background-color: rgba(255, 255, 255, 0.1);
   color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 살짝 입체감 추가 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
 }
 
-/* placeholder 스타일 */
-.signup-input::placeholder {
-  color: rgba(255, 255, 255, 0.7); /* 밝은 흰색 톤 */
-  font-style: italic; /* 살짝 기울임 */
-  font-family: "Jua", sans-serif; /* placeholder에도 동일 글씨체 적용 */
-}
-
-
-
-
-/* 포커스 시 효과 */
-.signup-input:focus {
-  outline: none;
-  border: 2px solid #00c6ff; /* 포커스 시 테두리 강조 */
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-}
-
 .signup-input:hover {
-  border-color: #00c6ff; /* 호버 시 테두리 색상 강조 */
+  border-color: #00c6ff;
   background-color: rgba(255, 255, 255, 0.15);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.signup-input:focus {
+  outline: none;
+  border: 2px solid #00c6ff;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* 회원가입 버튼 */
@@ -102,34 +96,27 @@
   width: 80%;
   max-width: 400px;
   padding: 1rem;
-  background: linear-gradient(90deg, #007bff, #00c6ff); /* 그라디언트 배경 */
+  background: linear-gradient(90deg, #007bff, #00c6ff);
   color: white;
   border: none;
-  border-radius: 25px; /* 둥근 모서리 */
+  border-radius: 25px;
   font-size: 1.2rem;
   font-family: "Jua", sans-serif;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease-in-out;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .signup-button:hover {
-  background: linear-gradient(90deg, #0056b3, #008cff); /* 호버 시 색상 변경 */
+  background: linear-gradient(90deg, #0056b3, #008cff);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
-  transform: translateY(-3px); /* 살짝 위로 올라가는 효과 */
+  transform: translateY(-3px);
 }
 
-.signup-button:active {
-  transform: translateY(1px); /* 클릭 시 눌리는 느낌 */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-}
-
-/* 하단 텍스트 */
 .signup-footer {
   margin-top: 1rem;
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8); /* 덜 눈에 띄는 흰색 */
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .signup-footer a {
@@ -140,16 +127,4 @@
 .signup-footer a:hover {
   color: #0056b3;
   text-decoration: underline;
-}
-
-/* 애니메이션 */
-@keyframes fadeInContent {
-  from {
-    opacity: 0;
-    transform: translateY(-10px); /* 위에서 아래로 자연스럽게 */
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
