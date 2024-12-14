@@ -10,6 +10,12 @@ const InputData = () => {
     { enabled: false, subject: "", range: "", difficulty: "", studyHour: "" },
     { enabled: false, subject: "", range: "", difficulty: "", studyHour: "" },
   ]);
+  const [studentInfo, setStudentInfo] = useState({
+    concentration: "",
+    breakPreference: "",
+    schedule: "",
+    sleepTime: "",
+  });
 
   const handleInputChange = (index, field, value) => {
     const updatedSubjects = [...subjects];
@@ -23,7 +29,21 @@ const InputData = () => {
     setSubjects(updatedSubjects);
   };
 
+  const handleStudentInfoChange = (field, value) => {
+    setStudentInfo({ ...studentInfo, [field]: value });
+  };
+
   const handleNextStep = () => {
+    if (step === 1) {
+      // Check if all required fields in Step 1 are filled
+      const allFilled = subjects.every(
+        (subject) => !subject.enabled || (subject.subject && subject.range && subject.difficulty && subject.studyHour)
+      );
+      if (!allFilled) {
+        alert("Please fill out all required fields to proceed.");
+        return;
+      }
+    }
     setStep(step + 1);
   };
 
@@ -45,7 +65,8 @@ const InputData = () => {
 
         {step === 1 && (
           <div>
-            <h2>Select and Fill Fields</h2>
+            <h2>Necessary Information for Subjects</h2>
+            <p>All fields are required to proceed to the next step.</p>
             <div className="subjects-grid">
               {subjects.map((subject, index) => (
                 <div key={index} className="subject-column">
@@ -82,7 +103,7 @@ const InputData = () => {
                       />
                       <input
                         type="text"
-                        placeholder="StudyHour (e.g., 2 hours)"
+                        placeholder="Study Hours (e.g., 2 hours per day)"
                         value={subject.studyHour}
                         onChange={(e) => handleInputChange(index, "studyHour", e.target.value)}
                         className="inputdata-input"
@@ -100,7 +121,8 @@ const InputData = () => {
 
         {step === 2 && (
           <div>
-            <h2>Information</h2>
+            <h2>Optional Information for Subjects</h2>
+            <p>This step is optional. You can proceed without filling all the fields.</p>
             <div className="subjects-grid">
               {subjects.map((subject, index) =>
                 subject.enabled ? (
@@ -111,20 +133,10 @@ const InputData = () => {
                       placeholder="Exam Date (e.g., 2024-12-10)"
                       className="inputdata-input"
                     />
-                    <input
-                      type="text"
-                      placeholder="Study Style (e.g., Concentration type)"
-                      className="inputdata-input"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Break Preference (e.g., Long break)"
-                      className="inputdata-input"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Daily Goal"
-                      className="inputdata-input"
+                    <textarea
+                      placeholder="Subject-Specific Notes (e.g., Avoid Saturdays)"
+                      className="inputdata-input textarea"
+                      rows="4"
                     />
                   </div>
                 ) : null
@@ -143,35 +155,39 @@ const InputData = () => {
 
         {step === 3 && (
           <div>
-            <h2>Daily Schedule</h2>
+            <h2>Optional Information for the Student</h2>
+            <p>This step is optional. You can proceed without filling all the fields.</p>
             <div className="subjects-grid">
-              {subjects.map((subject, index) =>
-                subject.enabled ? (
-                  <div key={index} className="subject-column">
-                    <h3>{subject.subject || `Subject ${index + 1}`}</h3>
-                    <input
-                      type="text"
-                      placeholder="Academy Schedule"
-                      className="inputdata-input"
-                    />
-                    <input
-                      type="text"
-                      placeholder="School Schedule"
-                      className="inputdata-input"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Weekend Preference"
-                      className="inputdata-input"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Sleep Hours"
-                      className="inputdata-input"
-                    />
-                  </div>
-                ) : null
-              )}
+              <div className="subject-column">
+                <input
+                  type="text"
+                  placeholder="Concentration Type (Short or Long)"
+                  value={studentInfo.concentration}
+                  onChange={(e) => handleStudentInfoChange("concentration", e.target.value)}
+                  className="inputdata-input"
+                />
+                <input
+                  type="text"
+                  placeholder="Break Preference (Short or Long)"
+                  value={studentInfo.breakPreference}
+                  onChange={(e) => handleStudentInfoChange("breakPreference", e.target.value)}
+                  className="inputdata-input"
+                />
+                <input
+                  type="text"
+                  placeholder="Schedule (e.g., Mon 1-6 p.m.)"
+                  value={studentInfo.schedule}
+                  onChange={(e) => handleStudentInfoChange("schedule", e.target.value)}
+                  className="inputdata-input"
+                />
+                <input
+                  type="text"
+                  placeholder="Sleep Time (e.g., 10 p.m. - 6 a.m.)"
+                  value={studentInfo.sleepTime}
+                  onChange={(e) => handleStudentInfoChange("sleepTime", e.target.value)}
+                  className="inputdata-input"
+                />
+              </div>
             </div>
             <div className="navigation-buttons">
               <button className="inputdata-button previous" onClick={handlePreviousStep}>
