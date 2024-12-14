@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Jua&family=Lalezar&display=swap');
 
 .about-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: url('./assets/space.png') no-repeat center center fixed;
-    background-size: cover; /* 배경 크기를 화면에 맞춤 */
-    color: white;
-    text-align: center;
-    font-family: 'Jua', sans-serif;
-    padding: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url('./assets/space.png') no-repeat center center fixed;
+  background-size: cover; /* 배경 크기를 화면에 맞춤 */
+  color: white;
+  text-align: center;
+  font-family: 'Jua', sans-serif;
+  padding: 20px;
+  overflow: hidden; /* 화면 크기를 벗어나는 요소 숨김 */
+}
   
   /* 로고 스타일 */
   .about-logo {
@@ -46,3 +47,82 @@
   .login-content {
     animation: fadeIn 1s ease-in-out; /* 페이드 인 효과 */
     }
+
+    .about-description {
+      font-size: 1.2rem;
+      margin-top: 0.01rem;
+      margin-bottom: 0rem; /* 첫 번째 문장과 두 번째 문장 사이의 공백 줄임 */
+    }
+    
+    .about-details {
+      font-size: 1.2rem;
+      margin-top: 0.5rem; /* 두 문장 사이 공백 추가 조정 */
+      margin-bottom: 0.1rem; /* 아래 요소와의 간격 유지 */
+    }
+
+
+    .about-purpose-title {
+      font-size: 2.5rem !important; /* 강제로 크기 적용 */
+      font-weight: bold;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: white;
+      text-align: center;
+    }
+
+    .about-purpose-details {
+      font-size: 1.2rem;
+      margin-top: 0.01rem; /* 위로 올리기 위해 기존 값을 줄이거나 1rem로 설정 */
+      margin-bottom: 0.2rem; /* 아래 요소와 적절한 간격 유지 */
+      text-align: center;
+      line-height: 1.5; /* 텍스트 간격 유지 */
+    }
+
+    .about-benefits-title {
+      font-size: 2.1rem !important; /* 크기 키움 */
+      font-weight: bold;
+      margin-bottom: 0.01rem; /* 아래 문장과의 간격 */
+      text-align: center;
+      color: white; /* 흰색으로 강조 */
+    }
+
+
+    about-benefits-list {
+      list-style: none; /* 기본 점 제거 */
+      padding: 0;
+      margin: 0;
+      font-size: 2.5rem !important; /* 글씨 크기 */
+      color: white;
+      line-height: 1; /* 줄 간격 */
+      text-align: left;
+    }
+    
+    .about-benefits-list li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.2rem; /* 각 항목 간 간격 */
+    }
+    
+    .about-benefits-list li::before {
+      content: "✔"; /* 체크 아이콘 추가 */
+      color: #00c6ff; /* 아이콘 색상 */
+      font-size: 1.5rem;
+      margin-right: 10px; /* 텍스트와 간격 */
+    }
+
+/* 콘텐츠 애니메이션 */
+.about-page > * {
+  animation: fadeIn 1s ease-in-out; /* 페이지 내 모든 자식 요소에 애니메이션 적용 */
+}
+
+/* 키프레임 정의 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px); /* 위에서 아래로 부드럽게 이동 */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -35,14 +35,14 @@ function About() {
 
       {/* Purpose 강조 */}
       <p className="about-purpose-title">
-        <strong>Our Purpose:</strong>
+        <strong>Our Purpose</strong>
       </p>
       <p className="about-purpose-details">
-        To simplify study planning for students, enabling them to focus on what matters most: learning and growth.
+        To simplify study planning for students, enabling them to focus on what matters most learning and growth.
       </p>
 
       {/* Benefits 목록 */}
-      <p className="about-benefits-title"><strong>Benefits for Users:</strong></p>
+      <p className="about-benefits-title"><strong>Benefits for Users</strong></p>
       <ul className="about-benefits-list">
         <li>Personalized study plans based on your needs.</li>
         <li>Real-time progress tracking and visualization.</li>
