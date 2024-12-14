@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Jua&family=Lalezar&display=swap');
-/* About 페이지 배경 복구 */
+
 .about-page {
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
     background-size: cover; /* 배경 크기를 화면에 맞춤 */
     color: white;
     text-align: center;
-    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-family: 'Jua', sans-serif;
     padding: 20px;
   }
   
@@ -24,17 +24,18 @@
   .back-button {
     position: absolute;
     top: 20px;
-    left: 20px; /* 오른쪽 상단 위치 */
-    font-family: 'IBM Plex Sans KR', sans-serif;
-    font-size: 16px;
+    left: 20px; /* about 버튼과 구분된 위치 */
+    font-family: 'Jua', sans-serif; /* 강조 폰트 */
+    font-size: 20px; /* 글씨 크기를 about 버튼과 동일하게 */
     color: white;
     background-color: transparent;
-    border: 2px solid white;
-    padding: 10px 20px;
+    border: 2px solid white; /* 흰색 네모 박스 추가 */
+    padding: 10px 50px; /* 내부 여백도 about 버튼과 동일 */
     border-radius: 5px;
     cursor: pointer;
-    z-index: 10;
+    z-index: 5;
     transition: all 0.3s ease;
+    text-transform: uppercase; /* 텍스트 대문자로 */
   }
   
   .back-button:hover {
@@ -42,4 +43,6 @@
     color: #007bff; /* hover 시 파란색 */
     border-color: #007bff;
   }
-  
+  .login-content {
+    animation: fadeIn 1s ease-in-out; /* 페이드 인 효과 */
+    }

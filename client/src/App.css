@@ -197,12 +197,12 @@ body {
   position: absolute;
   top: 20px;
   left: 20px;
-  font-family: 'Lalezar', sans-serif; /* 강조 폰트 */
+  font-family: 'Jua', sans-serif; /* 강조 폰트 */
   font-size: 20px;
   color: white;
   background-color: transparent;
   border: 2px solid white; /* 흰색 네모 박스 추가 */
-  padding: 10px 20px;
+  padding: 10px 10px;
   border-radius: 5px;
   cursor: pointer;
   z-index: 5;
