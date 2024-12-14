@@ -53,6 +53,12 @@
   background-color: #007bff;
 }
 
+.inputdata-error {
+  color: red;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
 .subjects-grid {
   display: flex;
   justify-content: space-around;
@@ -67,14 +73,30 @@
   width: 30%;
 }
 
-.inputdata-input {
+.inputdata-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
+}
+
+.inputdata-input,
+.inputdata-textarea {
+  width: 80%; /* 가로 크기 Step 3와 일치 */
   padding: 0.8rem;
+  margin: 0.5rem auto; /* 중앙 정렬 */
   border: 2px solid white;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
+  display: block; /* 중앙 정렬을 위해 block 속성 */
 }
+
+.inputdata-textarea {
+  height: 120px; /* 텍스트 박스 높이 */
+  resize: none; /* 사용자가 크기 조정하지 못하게 설정 */
+}
+
 
 .inputdata-button {
   padding: 0.8rem 1.5rem;
