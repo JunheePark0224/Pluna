@@ -7,6 +7,7 @@ import SignUp from "./SignUp";
 import LogIn from "./LogIn";
 import About from "./About";
 import InputData from "./InputData"; // InputData 컴포넌트 추가
+import CalendarPage from "./CalendarPage"; // CalendarPage 사용 중
 import ForgotPassword from "./ForgotPassword"; // ForgotPassword 컴포넌트 추가
 
 function MainPage() {
@@ -20,22 +21,22 @@ function MainPage() {
 
   return (
     <div className="App">
-      {/* 배경 */}
+      {/* Background */}
       <div className="background">
         <img src={backgroundImage} alt="Background" className="background-image" />
       </div>
 
-      {/* 로고 */}
+      {/* Logo */}
       <div className={`logo ${isAnimating ? "large" : "small"}`}>
         <img src={initialLogo} alt="Initial Logo" className="logo-image" />
       </div>
 
-      {/* About 버튼 */}
+      {/* About Button */}
       <div className="about-button" onClick={() => navigate("/about")}>
         About Pluna
       </div>
 
-      {/* 콘텐츠 */}
+      {/* Content */}
       <div className="content">
         <h1 className="main-title">Pluna</h1>
         <div className="button-row">
@@ -50,7 +51,6 @@ function MainPage() {
             Log In
           </button>
         </div>
-        {/* Pass 버튼 추가 */}
         <div className="button-row">
           <p>If you want to skip login,</p>
           <button className="button" onClick={() => navigate("/inputdata")}>
@@ -72,6 +72,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/inputdata" element={<InputData />} /> {/* InputData 라우팅 추가 */}
         <Route path="/forgot-password" element={<ForgotPassword />} /> {/* ForgotPassword 라우팅 추가 */}
+        <Route path="/calendar" element={<CalendarPage />} /> {/* CalendarPage 라우트 추가 */}
       </Routes>
     </Router>
   );

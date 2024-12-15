@@ -1,0 +1,721 @@
+{
+    "user_id": "junhee0224",
+    "recommendations": [
+        {
+            "subject": "Math",
+            "workbook": "Algebra Essentials Practice Workbook",
+            "total_pages": 150
+        },
+        {
+            "subject": "English",
+            "workbook": "English Grammar in Use by Raymond Murphy",
+            "total_pages": 100
+        }
+    ],
+    "schedule": [
+        {
+            "date": "2024-12-17",
+            "tasks": [
+                {
+                    "start_time": "09:00",
+                    "end_time": "10:15",
+                    "subject": "Math",
+                    "task": "Problem-solving practice",
+                    "workbook": "Algebra Essentials Practice Workbook",
+                    "pages": "7-12"
+                },
+                {
+                    "start_time": "10:15",
+                    "end_time": "10:30",
+                    "subject": "Break",
+                    "task": "Short break",
+                    "workbook": null,
+                    "pages": null
+                },
+                {
+                    "start_time": "10:30",
+                    "end_time": "11:30",
+                    "subject": "English",
+                    "task": "Grammar and Vocabulary practice",
+                    "workbook": "English Grammar in Use",
+                    "pages": "5-8"
+                }
+            ]
+        },
+        {
+            "date": "2024-12-18",
+            "tasks": [
+                {
+                    "start_time": "09:00",
+                    "end_time": "10:15",
+                    "subject": "Math",
+                    "task": "Problem-solving practice",
+                    "workbook": "Algebra Essentials Practice Workbook",
+                    "pages": "13-18"
+                },
+                {
+                    "start_time": "10:15",
+                    "end_time": "10:30",
+                    "subject": "Break",
+                    "task": "Short break",
+                    "workbook": null,
+                    "pages": null
+                },
+                {
+                    "start_time": "10:30",
+                    "end_time": "11:30",
+                    "subject": "English",
+                    "task": "Grammar and Vocabulary practice",
+                    "workbook": "English Grammar in Use",
+                    "pages": "9-12"
+                }
+            ]
+        },
+        {
+            "date": "2024-12-19",
+            "tasks": [
+                {
+                    "start_time": "09:00",
+                    "end_time": "10:15",
+                    "subject": "Math",
+                    "task": "Problem-solving practice",
+                    "workbook": "Algebra Essentials Practice Workbook",
+                    "pages": "19-24"
+                },
+                {
+                    "start_time": "10:15",
+                    "end_time": "10:30",
+                    "subject": "Break",
+                    "task": "Short break",
+                    "workbook": null,
+                    "pages": null
+                },
+                {
+                    "start_time": "10:30",
+                    "end_time": "11:30",
+                    "subject": "English",
+                    "task": "Grammar and Vocabulary practice",
+                    "workbook": "English Grammar in Use",
+                    "pages": "13-16"
+                }
+            ]
+        },
+        {
+            "date": "2024-12-20",
+            "tasks": [
+                {
+                    "start_time": "09:00",
+                    "end_time": "10:15",
+                    "subject": "Math",
+                    "task": "Problem-solving practice",
+                    "workbook": "Algebra Essentials Practice Workbook",
+                    "pages": "25-30"
+                },
+                {
+                    "start_time": "10:15",
+                    "end_time": "10:30",
+                    "subject": "Break",
+                    "task": "Short break",
+                    "workbook": null,
+                    "pages": null
+                },
+                {
+                    "start_time": "10:30",
+                    "end_time": "11:30",
+                    "subject": "English",
+                    "task": "Grammar and Vocabulary practice",
+                    "workbook": "English Grammar in Use",
+                    "pages": "17-20"
+                }
+            ]
+        },
+        {
+            "date": "2024-12-21",
+            "tasks": [
+                {
+                    "start_time": "09:00",
+                    "end_time": "10:15",
+                    "subject": "Math",
+                    "task": "Problem-solving practice",
+                    "workbook": "Algebra Essentials Practice Workbook",
+                    "pages": "31-36"
+                },
+                {
+                    "start_time": "10:15",
+                    "end_time": "10:30",
+                    "subject": "Break",
+                    "task": "Short break",
+                    "workbook": null,
+                    "pages": null
+                },
+                {
+                    "start_time": "10:30",
+                    "end_time": "11:30",
+                    "subject": "English",
+                    "task": "Grammar and Vocabulary practice",
+                    "workbook": "English Grammar in Use",
+                    "pages": "21-24"
+                }
+            ]
+        },
+        {
+            "date": "2024-12-22",
+            "tasks": [
+                {
+                    "start_time": "09:00",
+                    "end_time": "10:15",
+                    "subject": "Math",
+                    "task": "Problem-solving practice",
+                    "workbook": "Algebra Essentials Practice Workbook",
+                    "pages": "37-42"
+                },
+                {
+                    "start_time": "10:15",
+                    "end_time": "10:30",
+                    "subject": "Break",
+                    "task": "Short break",
+                    "workbook": null,
+                    "pages": null
+                },
+                {
+                    "start_time": "10:30",
+                    "end_time": "11:30",
+                    "subject": "English",
+                    "task": "Grammar and Vocabulary practice",
+                    "workbook": "English Grammar in Use",
+                    "pages": "25-28"
+                }
+            ]
+        },
+        {
+            "date": "2024-12-23",
+            "tasks": [
+                {
+                    "start_time": "09:00",
+                    "end_time": "10:15",
+                    "subject": "Math",
+                    "task": "Problem-solving practice",
+                    "workbook": "Algebra Essentials Practice Workbook",
+                    "pages": "43-48"
+                },
+                {
+                    "start_time": "10:15",
+                    "end_time": "10:30",
+                    "subject": "Break",
+                    "task": "Short break",
+                    "workbook": null,
+                    "pages": null
+                },
+                {
+                    "start_time": "10:30",
+                    "end_time": "11:30",
+                    "subject": "English",
+                    "task": "Grammar and Vocabulary practice",
+                    "workbook": "English Grammar in Use",
+                    "pages": "29-32"
+                }
+            ]
+        },
+        {
+            "date": "2024-12-24",
+            "tasks": [
+                {
+                    "start_time": "09:00",
+                    "end_time": "10:15",
+                    "subject": "Math",
+                    "task": "Problem-solving practice",
+                    "workbook": "Algebra Essentials Practice Workbook",
+                    "pages": "49-54"
+                },
+                {
+                    "start_time": "10:15",
+                    "end_time": "10:30",
+                    "subject": "Break",
+                    "task": "Short break",
+                    "workbook": null,
+                    "pages": null
+                },
+                {
+                    "start_time": "10:30",
+                    "end_time": "11:30",
+                    "subject": "English",
+                    "task": "Grammar and Vocabulary practice",
+                    "workbook": "English Grammar in Use",
+                    "pages": "33-36"
+                }
+            ]
+        },
+        {
+            "schedule": [
+                {
+                    "date": "2024-12-25",
+                    "tasks": [
+                        {
+                            "start_time": "09:00",
+                            "end_time": "10:15",
+                            "subject": "Math",
+                            "task": "Problem-solving practice",
+                            "workbook": "Algebra Essentials Practice Workbook",
+                            "pages": "55-60"
+                        },
+                        {
+                            "start_time": "10:15",
+                            "end_time": "10:30",
+                            "subject": "Break",
+                            "task": "Short break",
+                            "workbook": null,
+                            "pages": null
+                        },
+                        {
+                            "start_time": "10:30",
+                            "end_time": "11:30",
+                            "subject": "English",
+                            "task": "Grammar and Vocabulary practice",
+                            "workbook": "English Grammar in Use",
+                            "pages": "37-40"
+                        }
+                    ]
+                },
+                {
+                    "date": "2024-12-26",
+                    "tasks": [
+                        {
+                            "start_time": "09:00",
+                            "end_time": "10:15",
+                            "subject": "Math",
+                            "task": "Problem-solving practice",
+                            "workbook": "Algebra Essentials Practice Workbook",
+                            "pages": "61-66"
+                        },
+                        {
+                            "start_time": "10:15",
+                            "end_time": "10:30",
+                            "subject": "Break",
+                            "task": "Short break",
+                            "workbook": null,
+                            "pages": null
+                        },
+                        {
+                            "start_time": "10:30",
+                            "end_time": "11:30",
+                            "subject": "English",
+                            "task": "Grammar and Vocabulary practice",
+                            "workbook": "English Grammar in Use",
+                            "pages": "41-44"
+                        }
+                    ]
+                },
+                {
+                    "date": "2024-12-27",
+                    "tasks": [
+                        {
+                            "start_time": "09:00",
+                            "end_time": "10:15",
+                            "subject": "Math",
+                            "task": "Problem-solving practice",
+                            "workbook": "Algebra Essentials Practice Workbook",
+                            "pages": "67-72"
+                        },
+                        {
+                            "start_time": "10:15",
+                            "end_time": "10:30",
+                            "subject": "Break",
+                            "task": "Short break",
+                            "workbook": null,
+                            "pages": null
+                        },
+                        {
+                            "start_time": "10:30",
+                            "end_time": "11:30",
+                            "subject": "English",
+                            "task": "Grammar and Vocabulary practice",
+                            "workbook": "English Grammar in Use",
+                            "pages": "45-48"
+                        }
+                    ]
+                },
+                {
+                    "date": "2024-12-28",
+                    "tasks": [
+                        {
+                            "start_time": "09:00",
+                            "end_time": "10:15",
+                            "subject": "Math",
+                            "task": "Problem-solving practice",
+                            "workbook": "Algebra Essentials Practice Workbook",
+                            "pages": "73-78"
+                        },
+                        {
+                            "start_time": "10:15",
+                            "end_time": "10:30",
+                            "subject": "Break",
+                            "task": "Short break",
+                            "workbook": null,
+                            "pages": null
+                        },
+                        {
+                            "start_time": "10:30",
+                            "end_time": "11:30",
+                            "subject": "English",
+                            "task": "Grammar and Vocabulary practice",
+                            "workbook": "English Grammar in Use",
+                            "pages": "49-52"
+                        }
+                    ]
+                },
+                {
+                    "date": "2024-12-29",
+                    "tasks": [
+                        {
+                            "start_time": "09:00",
+                            "end_time": "10:15",
+                            "subject": "Math",
+                            "task": "Problem-solving practice",
+                            "workbook": "Algebra Essentials Practice Workbook",
+                            "pages": "79-84"
+                        },
+                        {
+                            "start_time": "10:15",
+                            "end_time": "10:30",
+                            "subject": "Break",
+                            "task": "Short break",
+                            "workbook": null,
+                            "pages": null
+                        },
+                        {
+                            "start_time": "10:30",
+                            "end_time": "11:30",
+                            "subject": "English",
+                            "task": "Grammar and Vocabulary practice",
+                            "workbook": "English Grammar in Use",
+                            "pages": "53-56"
+                        }
+                    ]
+                },
+                {
+                    "date": "2024-12-30",
+                    "tasks": [
+                        {
+                            "start_time": "09:00",
+                            "end_time": "10:15",
+                            "subject": "Math",
+                            "task": "Problem-solving practice",
+                            "workbook": "Algebra Essentials Practice Workbook",
+                            "pages": "85-90"
+                        },
+                        {
+                            "start_time": "10:15",
+                            "end_time": "10:30",
+                            "subject": "Break",
+                            "task": "Short break",
+                            "workbook": null,
+                            "pages": null
+                        },
+                        {
+                            "start_time": "10:30",
+                            "end_time": "11:30",
+                            "subject": "English",
+                            "task": "Grammar and Vocabulary practice",
+                            "workbook": "English Grammar in Use",
+                            "pages": "57-60"
+                        }
+                    ]
+                },
+                {
+                    "date": "2024-12-31",
+                    "tasks": [
+                        {
+                            "start_time": "09:00",
+                            "end_time": "10:15",
+                            "subject": "Math",
+                            "task": "Problem-solving practice",
+                            "workbook": "Algebra Essentials Practice Workbook",
+                            "pages": "91-96"
+                        },
+                        {
+                            "start_time": "10:15",
+                            "end_time": "10:30",
+                            "subject": "Break",
+                            "task": "Short break",
+                            "workbook": null,
+                            "pages": null
+                        },
+                        {
+                            "start_time": "10:30",
+                            "end_time": "11:30",
+                            "subject": "English",
+                            "task": "Grammar and Vocabulary practice",
+                            "workbook": "English Grammar in Use",
+                            "pages": "61-64"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-01-01",
+                    "tasks": [
+                        {
+                            "start_time": "09:00",
+                            "end_time": "10:15",
+                            "subject": "Math",
+                            "task": "Problem-solving practice",
+                            "workbook": "Algebra Essentials Practice Workbook",
+                            "pages": "97-102"
+                        },
+                        {
+                            "start_time": "10:15",
+                            "end_time": "10:30",
+                            "subject": "Break",
+                            "task": "Short break",
+                            "workbook": null,
+                            "pages": null
+                        },
+                        {
+                            "start_time": "10:30",
+                            "end_time": "11:30",
+                            "subject": "English",
+                            "task": "Grammar and Vocabulary practice",
+                            "workbook": "English Grammar in Use",
+                            "pages": "65-68"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-01-02",
+                    "tasks": [
+                        {
+                            "start_time": "09:00",
+                            "end_time": "10:15",
+                            "subject": "Math",
+                            "task": "Problem-solving practice",
+                            "workbook": "Algebra Essentials Practice Workbook",
+                            "pages": "103-108"
+                        },
+                        {
+                            "start_time": "10:15",
+                            "end_time": "10:30",
+                            "subject": "Break",
+                            "task": "Short break",
+                            "workbook": null,
+                            "pages": null
+                        },
+                        {
+                            "start_time": "10:30",
+                            "end_time": "11:30",
+                            "subject": "English",
+                            "task": "Grammar and Vocabulary practice",
+                            "workbook": "English Grammar in Use",
+                            "pages": "69-72"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "schedule": [
+                {
+                    "date": "2025-01-03",
+                    "tasks": [
+                        {
+                            "start_time": "09:00",
+                            "end_time": "10:15",
+                            "subject": "Math",
+                            "task": "Problem-solving practice",
+                            "workbook": "Algebra Essentials Practice Workbook",
+                            "pages": "109-114"
+                        },
+                        {
+                            "start_time": "10:15",
+                            "end_time": "10:30",
+                            "subject": "Break",
+                            "task": "Short break",
+                            "workbook": null,
+                            "pages": null
+                        },
+                        {
+                            "start_time": "10:30",
+                            "end_time": "11:30",
+                            "subject": "English",
+                            "task": "Grammar and Vocabulary practice",
+                            "workbook": "English Grammar in Use",
+                            "pages": "73-76"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-01-04",
+                    "tasks": [
+                        {
+                            "start_time": "09:00",
+                            "end_time": "10:15",
+                            "subject": "Math",
+                            "task": "Problem-solving practice",
+                            "workbook": "Algebra Essentials Practice Workbook",
+                            "pages": "115-120"
+                        },
+                        {
+                            "start_time": "10:15",
+                            "end_time": "10:30",
+                            "subject": "Break",
+                            "task": "Short break",
+                            "workbook": null,
+                            "pages": null
+                        },
+                        {
+                            "start_time": "10:30",
+                            "end_time": "11:30",
+                            "subject": "English",
+                            "task": "Grammar and Vocabulary practice",
+                            "workbook": "English Grammar in Use",
+                            "pages": "77-80"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-01-05",
+                    "tasks": [
+                        {
+                            "start_time": "09:00",
+                            "end_time": "10:15",
+                            "subject": "Math",
+                            "task": "Problem-solving practice",
+                            "workbook": "Algebra Essentials Practice Workbook",
+                            "pages": "121-126"
+                        },
+                        {
+                            "start_time": "10:15",
+                            "end_time": "10:30",
+                            "subject": "Break",
+                            "task": "Short break",
+                            "workbook": null,
+                            "pages": null
+                        },
+                        {
+                            "start_time": "10:30",
+                            "end_time": "11:30",
+                            "subject": "English",
+                            "task": "Grammar and Vocabulary practice",
+                            "workbook": "English Grammar in Use",
+                            "pages": "81-84"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-01-06",
+                    "tasks": [
+                        {
+                            "start_time": "09:00",
+                            "end_time": "10:15",
+                            "subject": "Math",
+                            "task": "Problem-solving practice",
+                            "workbook": "Algebra Essentials Practice Workbook",
+                            "pages": "127-132"
+                        },
+                        {
+                            "start_time": "10:15",
+                            "end_time": "10:30",
+                            "subject": "Break",
+                            "task": "Short break",
+                            "workbook": null,
+                            "pages": null
+                        },
+                        {
+                            "start_time": "10:30",
+                            "end_time": "11:30",
+                            "subject": "English",
+                            "task": "Grammar and Vocabulary practice",
+                            "workbook": "English Grammar in Use",
+                            "pages": "85-88"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-01-07",
+                    "tasks": [
+                        {
+                            "start_time": "09:00",
+                            "end_time": "10:15",
+                            "subject": "Math",
+                            "task": "Problem-solving practice",
+                            "workbook": "Algebra Essentials Practice Workbook",
+                            "pages": "133-138"
+                        },
+                        {
+                            "start_time": "10:15",
+                            "end_time": "10:30",
+                            "subject": "Break",
+                            "task": "Short break",
+                            "workbook": null,
+                            "pages": null
+                        },
+                        {
+                            "start_time": "10:30",
+                            "end_time": "11:30",
+                            "subject": "English",
+                            "task": "Grammar and Vocabulary practice",
+                            "workbook": "English Grammar in Use",
+                            "pages": "89-92"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-01-08",
+                    "tasks": [
+                        {
+                            "start_time": "09:00",
+                            "end_time": "10:15",
+                            "subject": "Math",
+                            "task": "Problem-solving practice",
+                            "workbook": "Algebra Essentials Practice Workbook",
+                            "pages": "139-144"
+                        },
+                        {
+                            "start_time": "10:15",
+                            "end_time": "10:30",
+                            "subject": "Break",
+                            "task": "Short break",
+                            "workbook": null,
+                            "pages": null
+                        },
+                        {
+                            "start_time": "10:30",
+                            "end_time": "11:30",
+                            "subject": "English",
+                            "task": "Grammar and Vocabulary practice",
+                            "workbook": "English Grammar in Use",
+                            "pages": "93-96"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-01-09",
+                    "tasks": [
+                        {
+                            "start_time": "09:00",
+                            "end_time": "10:15",
+                            "subject": "Math",
+                            "task": "Problem-solving practice",
+                            "workbook": "Algebra Essentials Practice Workbook",
+                            "pages": "145-150"
+                        },
+                        {
+                            "start_time": "10:15",
+                            "end_time": "10:30",
+                            "subject": "Break",
+                            "task": "Short break",
+                            "workbook": null,
+                            "pages": null
+                        },
+                        {
+                            "start_time": "10:30",
+                            "end_time": "11:30",
+                            "subject": "English",
+                            "task": "Grammar and Vocabulary practice",
+                            "workbook": "English Grammar in Use",
+                            "pages": "97-100"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
