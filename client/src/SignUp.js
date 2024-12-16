@@ -28,15 +28,20 @@ const SignUp = () => {
       return;
     }
     try {
-      const response = await axios.post("http://localhost:3001/api/signup", {
+      const response = await axios.post("http://localhost:3000/api/signup", {
         username: formData.username,
         id: formData.id,
         email: formData.email,
         password: formData.password,
         phone_number: formData.phoneNumber,
       });
+
+      
       setMessage(response.data.message);
       localStorage.setItem("username", formData.username);
+      setTimeout(() => {
+        navigate("/login");
+      }, 1000); // 1초 후 이동
     } catch (error) {
       setMessage(error.response?.data?.message || "Signup failed");
     }
