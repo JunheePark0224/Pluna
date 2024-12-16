@@ -90,8 +90,93 @@ Pluna offers a straightforward yet powerful platform designed to craft personali
    npm start
    ```
    
-## 🤝 Contributing
-If you are looking to contribute to Pluna, first of all, thank you! Please see our [Guidelines](./CONTRIBUTING.md) for contributing for more information on how to get started.
+## 💻 How to Contribute to Pluna
+Thank you for your interest in contributing to Pluna! To set up the project locally and get started, follow these steps:
+
+### 1. Prerequisites
+Ensure you have the following installed:
+
+Node.js (v14+ recommended): Download Node.js
+npm (Node Package Manager, included with Node.js)
+MySQL (v8.0+): Download MySQL
+
+### 2. Project Setup
+2-1. Clone the Repository
+     Clone the project repository to your local machine:
+     git clone https://github.com/your-repository/pluna.git
+     cd pluna
+
+2-2. Install Dependencies
+     Run the following command to install required packages:
+     npm install
+
+2-3. Set Up the Database
+
+Install and configure MySQL.
+Create a database:
+sql
+
+CREATE DATABASE pluna;
+Update the MySQL credentials in server/config/db.js:
+javascript
+
+module.exports = {
+  host: 'localhost',
+  user: 'root',
+  password: 'your_password', // Replace with your MySQL password
+  database: 'pluna',
+};
+Run Database Migrations (Optional)
+If you use migration scripts, run:
+
+
+npm run migrate
+Start the Server
+Run the project:
+
+
+node app.js
+OR if using scripts:
+
+
+npm start
+Access the Application
+Open your browser and navigate to:
+http://localhost:3001
+
+### 3. Contribution Workflow
+Fork this repository to your GitHub account.
+Create a new branch for your feature/bugfix:
+
+git checkout -b feature/your-feature-name
+Make changes and commit:
+
+git add .
+git commit -m "Add your meaningful commit message"
+Push to your branch:
+
+git push origin feature/your-feature-name
+Submit a Pull Request (PR) on GitHub.
+
+### 4. Notes for Contributors
+Follow Code Standards: Ensure your code passes lint checks and follows project conventions.
+Environment Variables: Add your own .env file based on example.env if required.
+Testing: Run tests before submitting your PR:
+
+npm test
+### 5. Troubleshooting
+If you face any issues during setup:
+
+Ensure MySQL is running on port 3306.
+Check your node_modules by reinstalling:
+
+rm -rf node_modules
+npm install
+Verify database credentials in config/db.js.
+For additional help, open an issue on GitHub.
+
+### Happy Coding! 🚀
+Thank you for contributing to Pluna!
 
 ## 📄 License
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
