@@ -90,8 +90,109 @@ Pluna offers a straightforward yet powerful platform designed to craft personali
    npm start
    ```
    
-## 🤝 Contributing
-If you are looking to contribute to Pluna, first of all, thank you! Please see our [Guidelines](./CONTRIBUTING.md) for contributing for more information on how to get started.
+## 💻 How to Contribute to Pluna
+Thank you for your interest in contributing to Pluna! To set up the project locally and get started, follow these steps:
+
+### 1. Prerequisites
+Ensure you have the following installed:
+
+- **Node.js** (v14+ recommended): https://nodejs.org/en
+- **npm** (Node Package Manager, included with Node.js)
+- **MySQL** (v8.0+): https://dev.mysql.com/downloads/installer/
+
+### 2. Project Setup
+- **2-1. Clone the Repository**
+     Clone the project repository to your local machine:
+     ```bash
+     git clone https://github.com/your-repository/pluna.git
+     cd pluna
+     ```
+
+- **2-2. Install Dependencies**
+     Run the following command to install required packages:
+     ```bash
+     npm install
+     ```
+
+- **2-3. Set Up the Database**
+
+    Install and configure MySQL.
+    Create a database:
+    ```sql
+    CREATE DATABASE pluna;
+    ```
+
+    Update the MySQL credentials in server/config/db.js:
+    ```javascript
+    module.exports = {
+     host: 'localhost',
+     user: 'root',
+     password: 'your_password', // Replace with your MySQL password
+     database: 'pluna',
+    };
+
+    Run Database Migrations (Optional)
+    If you use migration scripts, run:
+
+    ```bash
+    npm run migrate
+    ```
+
+###3. Start the Server
+    Run the project:
+    ```bash
+    node app.js
+    ```
+
+    OR if using scripts:
+    ```bash
+    npm start
+    ```
+    Access the Application
+    Open your browser and navigate to:
+    http://localhost:3001
+
+### 4. Contribution Workflow
+- **4-1. Fork this repository to your GitHub account.**
+
+- **4-2. Create a new branch for your feature/bugfix:**
+    ```bash
+    git checkout -b feature/your-feature-name
+    ```
+
+- **4-3. Make changes and commit:**
+    ```bash
+    git add .
+    git commit -m "Add your meaningful commit message"
+    ```
+- **4-4. Push to your branch:**
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+    Submit a Pull Request (PR) on GitHub.
+
+### 5. Notes for Contributors
+    Follow Code Standards: Ensure your code passes lint checks and follows project conventions.
+    Environment Variables: Add your own .env file based on example.env if required.
+    Testing: Run tests before submitting your PR:
+    ```bash
+    npm test
+    ```
+
+### 6. Troubleshooting
+    If you face any issues during setup:
+
+- **6-1. Ensure MySQL is running on port 3306.**
+    Check your node_modules by reinstalling:
+    ```bash
+    rm -rf node_modules
+    npm install
+    ```
+    Verify database credentials in config/db.js.
+    For additional help, open an issue on GitHub.
+
+### Happy Coding! 🚀
+    Thank you for contributing to Pluna!
 
 ## 📄 License
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
