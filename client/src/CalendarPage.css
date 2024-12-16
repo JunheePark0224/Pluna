@@ -1,47 +1,92 @@
-/* 전체 화면 스크롤 가능 */
+/* 폰트 설정 */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Jua&family=Lalezar&display=swap');
+
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden; /* Prevent double scroll */
+  overflow: hidden;
+  font-family: 'IBM Plex Sans KR', 'Jua', 'Lalezar', sans-serif; /* 기본 폰트 */
 }
 
 .calendar-container {
   display: flex;
   flex-direction: column;
-  height: 100vh; /* 전체 화면 높이 */
-  overflow-y: auto; /* 세로 스크롤 활성화 */
-  background-color: #f9f9f9; /* 배경 색상 추가 */
+  height: 100vh;
+  overflow-y: auto;
+  background-image: url("./assets/space.png"); /* 달력 배경 */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .calendar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
+  padding: 15px 20px; /* 메뉴바 크기 유지 */
+  background-color: #fff; /* 메뉴바 배경 흰색 */
+  color: #000; /* 메뉴바 글씨 검정색 */
   position: sticky;
   top: 0;
   z-index: 10;
+  font-family: 'Jua', sans-serif; /* 메뉴바 폰트 적용 */
 }
 
-.calendar-header h2 {
+.calendar-header h1 {
   margin: 0;
 }
 
 .calendar-header button {
-  background-color: #ffffff;
-  color: #4caf50;
-  border: none;
-  padding: 5px 10px;
+  background-color: #fff; /* 버튼 흰색 */
+  color: #000; /* 버튼 텍스트 검정색 */
+  border: 1px solid #000; /* 검정 테두리 추가 */
+  padding: 6px 10px;
+  font-size: 12px;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Jua', sans-serif; /* 버튼 폰트 Jua 적용 */
 }
 
 .calendar-header button:hover {
-  background-color: #e7e7e7;
+  background-color: #f0f0f0; /* 호버 시 밝은 회색 */
+  transform: scale(1.05);
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 가운데 정렬 */
+  padding: 10px;
+  color: #fff; /* 텍스트 흰색 */
+  font-family: 'Jua', sans-serif; /* Jua 폰트 적용 */
+}
+
+.nav-button {
+  background-color: #fff; /* 네비게이션 버튼 흰색 */
+  color: #000; /* 버튼 텍스트 검정색 */
+  border: 1px solid #000; /* 검정 테두리 추가 */
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Jua', sans-serif; /* 버튼 폰트 Jua 적용 */
+}
+
+.nav-button:hover {
+  background-color: #f0f0f0; /* 호버 시 밝은 회색 */
+  transform: scale(1.05);
+}
+
+.navigation-buttons h2 {
+  font-size: 24px; /* 연도와 월 크기 키우기 */
+  font-weight: bold;
+  color: #fff; /* 흰색 글씨 */
+  font-family: 'Jua', sans-serif; /* Jua 폰트 적용 */
+  margin: 0;
 }
 
 .calendar-grid {
@@ -52,22 +97,36 @@ html, body {
 }
 
 .calendar-day {
-  border: 1px solid #ddd;
+  border: 2px solid #fff; /* 테두리 흰색으로 강조 */
   padding: 10px;
-  background-color: #fff;
+  background-color: #000; /* 달력 칸 배경 검정색 */
+  color: #fff; /* 글씨 색상 하얀색 */
   border-radius: 5px;
   min-height: 100px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif; /* 달력 안의 글씨만 기본 폰트 적용 */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
+
+.calendar-day:hover {
+  transform: scale(1.05); /* 크기 확대 */
+  background-color: #333; /* 배경색을 어두운 회색으로 변경 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* 그림자 강화 */
+  border-color: #00c8ff; /* 호버 시 테두리 색상을 강조 (노란색) */
+}
+
 
 .calendar-date {
   font-weight: bold;
   text-align: center;
   margin-bottom: 5px;
+  color: #fff; /* 날짜 텍스트 하얀색 */
 }
 
 .task-entry {
   font-size: 12px;
   line-height: 1.5;
   margin-bottom: 10px;
+  color: #fff; /* task 텍스트 하얀색 */
+  font-family: Arial, sans-serif; /* 달력 안의 글씨만 기본 폰트 적용 */
 }

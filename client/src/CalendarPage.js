@@ -8,6 +8,21 @@ const CalendarPage = () => {
   const [username, setUsername] = useState("Guest");
   const [isEditMode, setIsEditMode] = useState(false);
 
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
   const flattenSchedule = (schedule) => {
     const flattened = [];
     schedule.forEach((entry) => {
@@ -108,7 +123,7 @@ const CalendarPage = () => {
           &lt; Previous
         </button>
         <h2>
-          {year}년 {month}월
+          {monthNames[month - 1]} {year} {/* 영어로 표시 */}
         </h2>
         <button onClick={handleNextMonth} className="nav-button">
           Next &gt;
