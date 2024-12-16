@@ -51,12 +51,6 @@ function MainPage() {
             Log In
           </button>
         </div>
-        <div className="button-row">
-          <p>If you want to skip login,</p>
-          <button className="button" onClick={() => navigate("/inputdata")}>
-            Pass
-          </button>
-        </div>
       </div>
     </div>
   );
