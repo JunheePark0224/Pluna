@@ -105,6 +105,15 @@ To contribute code or documentation updates:
 - Provide a clear and detailed description of your changes.
 - Keep your PR focused on a single topic or feature.
 
+## 🔒 Security Policy
+
+We take security seriously at Pluna. If you discover any security vulnerabilities, we encourage you to report them responsibly.
+
+- **How to Report**: Please send an email to [studywithpluna@gmail.com](mailto:studywithpluna@gmail.com) with a detailed description of the vulnerability.
+- **What to Include**: Steps to reproduce the issue, the impact it could have, and any potential fixes or recommendations.
+- **Response Time**: We aim to respond to all security-related emails within 48 hours and will work closely with you to address the issue promptly.
+
+Your efforts to responsibly disclose vulnerabilities help us keep Pluna safe for everyone!
 ---
 
 ## 👶 Beginner-Friendly Contributions
