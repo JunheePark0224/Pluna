@@ -33,7 +33,7 @@
 /* 로고 */
 .signup-logo {
   width: 150px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.01rem;
   transition: transform 0.3s ease, filter 0.3s ease; /* 애니메이션 효과 */
   cursor: pointer; /* 클릭 가능 커서 */
 }
@@ -127,4 +127,26 @@
 .signup-footer a:hover {
   color: #0056b3;
   text-decoration: underline;
+}
+
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 전체 컨텐츠에 애니메이션 적용 */
+.signup-content {
+  z-index: 1;
+  text-align: center;
+  color: white;
+  font-family: "Jua", sans-serif;
+  opacity: 0; /* 초기 상태 */
+  animation: fadeSlideIn 1s ease-out forwards; /* 애니메이션 적용 */
 }
