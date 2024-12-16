@@ -250,3 +250,20 @@ h2 {
   color: #ffffff;
   margin-bottom: 1rem; /* 아래 여백 */
 }
+
+/* 페이드인 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* 시작: 투명 상태 */
+    transform: translateY(20px); /* 아래에서 시작 */
+  }
+  to {
+    opacity: 1; /* 끝: 불투명 상태 */
+    transform: translateY(0); /* 제자리 */
+  }
+}
+
+/* 전체 박스에 페이드인 애니메이션 적용 */
+.inputdata-box {
+  animation: fadeIn 1.5s ease-out; /* 페이드인 효과 적용 */
+}

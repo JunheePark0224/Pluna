@@ -73,7 +73,7 @@ html, body {
 .calendar-title {
   flex: 1;
   text-align: center; /* 중앙 정렬 */
-  font-size: 1.8rem;
+  font-size: 2.7rem;
   font-weight: bold;
   color: #fff;
 }
@@ -88,7 +88,7 @@ html, body {
   color: #000;
   border: 1px solid #000;
   padding: 6px 10px;
-  font-size: 12px;
+  font-size: 20px;
   border-radius: 5px;
   cursor: pointer;
   font-family: 'Jua', sans-serif;
